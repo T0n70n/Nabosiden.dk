@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nabosiden · Vi laver din hjemmeside. Du skal ikke gøre noget.</title>
+<meta name="description" content="Hjemmesider til små, lokale firmaer. Vi ringer, laver siden og viser den til dig, før du betaler. 0 kr i opstart, ingen binding, fra 499 kr om måneden.">
+<meta property="og:title" content="Nabosiden · Vi laver din hjemmeside. Du skal ikke gøre noget.">
+<meta property="og:description" content="Hjemmesider til små, lokale firmaer. Vi ringer, laver siden og viser den til dig, før du betaler. 0 kr i opstart, ingen binding, fra 499 kr om måneden.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<meta name="theme-color" content="#17734F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F7F6F1;-webkit-text-size-adjust:100%;font-family:'Nunito',system-ui,sans-serif}
+a{color:#17734F}a:hover{color:#0F5A3D}
+img,svg{max-width:100%}
+body{overflow-wrap:break-word}
+summary{list-style:none}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;font-size:28px;line-height:1;color:#17734F;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+:focus-visible{outline:3px solid #17734F;outline-offset:3px}
+@media (max-width:640px){header a[href="/#se-din-side"]{display:none!important}}
+body>div{min-width:0}
+.msg{margin:0;font-size:18px;font-weight:800;border-radius:14px;padding:14px 16px}
+.msg.good{background:#E3F1E8;color:#0F5A3D}
+.msg.bad{background:#FBE3E0;color:#8E2A1F}
+input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
+.proof{display:flex;flex-wrap:wrap;align-items:center;gap:28px;background:#FFFFFF;border-radius:28px;padding:20px;text-decoration:none;color:#17262B;box-shadow:0 2px 0 #E4E2D9;transition:transform .15s}
+.proof:hover{transform:translateY(-3px);color:#17262B}
+.proof-img{flex:1 1 380px;min-width:0;border-radius:18px;overflow:hidden;border:1px solid #E4E2D9}
+.proof-img img{display:block;width:100%;height:auto}
+.proof-txt{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:12px;padding:8px}
+.proof-txt b{font-size:28px;font-weight:900;line-height:1.15}
+.proof-txt>span{font-size:19px;color:#4A585D}
+.proof-txt .proof-go{display:inline-flex;align-items:center;gap:8px;color:#17734F;font-weight:900;font-size:20px}
+
+/* se din side */
+.sds{background:#FFFFFF;border-top:1px solid #E4E2D9;border-bottom:1px solid #E4E2D9;scroll-margin-top:12px}
+.sds-in{max-width:880px;margin:0 auto;padding:72px 20px;display:flex;flex-direction:column;gap:28px}
+.sds-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.pill{background:#E3F1E8;color:#0F5A3D;font-weight:800;font-size:17px;padding:8px 16px;border-radius:999px}
+.sds-head h2{margin:0;font-size:clamp(32px,4vw,46px);font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.sds-head p{margin:0;color:#4A585D;font-size:21px}
+.dots{list-style:none;margin:0;padding:0;display:flex;gap:10px}
+.dots li{flex:1;display:flex;flex-direction:column;gap:8px;font-size:16px;font-weight:800;color:#8A9296}
+.dots li span{height:10px;border-radius:99px;background:#DCD9CE;transition:background .3s}
+.dots li.on{color:#17262B}.dots li.on span{background:#17734F}
+.card{background:#F7F6F1;border-radius:32px;padding:clamp(20px,4vw,40px)}
+.st{display:flex;flex-direction:column;gap:18px}
+.st[hidden]{display:none}
+.st h3{margin:0;font-size:clamp(28px,3.4vw,40px);line-height:1.1;font-weight:900;letter-spacing:-.02em}
+.sub{margin:-6px 0 0;font-size:20px;color:#4A585D}
+.st label{display:flex;flex-direction:column;gap:8px;font-weight:800;font-size:19px}
+.st label small{font-weight:600;font-size:16px;color:#4A585D;margin-top:-4px}
+.st input:not([type=checkbox]){font:inherit;font-weight:700;font-size:22px;min-height:68px;padding:0 18px;border:2px solid #CFCCC0;border-radius:18px;background:#FFFFFF;color:#17262B;width:100%}
+.st input:focus{border-color:#17734F;outline:none;box-shadow:0 0 0 4px #CFE7DA}
+.go{font:inherit;font-size:24px;font-weight:900;min-height:74px;padding:0 32px;border:0;border-radius:18px;background:#17734F;color:#FFFFFF;box-shadow:0 5px 0 #0F5A3D;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:12px;transition:transform .1s,box-shadow .1s}
+.go:active{transform:translateY(4px);box-shadow:0 1px 0 #0F5A3D}
+.back{font:inherit;font-size:19px;font-weight:800;min-height:60px;padding:0 22px;border:2px solid #CFCCC0;border-radius:18px;background:#FFFFFF;color:#17262B;cursor:pointer}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.row .go{flex:1 1 240px}
+.mini{margin:0;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;font-size:16px;font-weight:700;color:#4A585D}
+.mini span::before{content:"✓ ";color:#17734F}
+.err{margin:0;background:#FBE3E0;color:#8E2A1F;font-weight:800;border-radius:14px;padding:12px 16px;font-size:18px}
+.found{margin:0;background:#E3F1E8;color:#0F5A3D;font-weight:800;border-radius:14px;padding:12px 16px;font-size:18px}
+.combo{position:relative;display:flex;flex-direction:column;gap:8px}
+.combo>label{font-weight:800;font-size:19px}
+.sug{list-style:none;margin:0;padding:6px;position:absolute;left:0;right:0;top:100%;z-index:5;background:#FFFFFF;border:2px solid #17734F;border-radius:18px;box-shadow:0 20px 40px -20px rgba(23,38,43,.35);display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.sug[hidden]{display:none}
+.sug li{padding:14px 16px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column}
+.sug li b{font-size:19px}.sug li small{color:#4A585D;font-size:15px}
+.sug li[aria-selected=true],.sug li:hover{background:#E3F1E8}
+.search{position:relative;color:#4A585D}
+.search svg{position:absolute;left:20px;top:22px;pointer-events:none}
+.st .search input{padding-left:56px;font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.tile{font:inherit;cursor:pointer;min-height:132px;padding:16px 10px;border-radius:22px;border:3px solid #E4E2D9;background:#FFFFFF;color:#17262B;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:18px;line-height:1.2;text-align:center;transition:transform .12s,border-color .12s;hyphens:auto;overflow-wrap:anywhere}
+.tile:hover{transform:translateY(-2px)}
+.tile .ic{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:color-mix(in srgb,var(--a) 14%,#FFFFFF)}
+.tile .ic svg{width:30px;height:30px;fill:none;stroke:var(--a);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tile[aria-checked=true]{border-color:var(--a);background:color-mix(in srgb,var(--a) 9%,#FFFFFF)}
+.tile[aria-checked=true]::after{content:"✓ Valgt";font-size:14px;color:#FFFFFF;background:var(--a);padding:3px 10px;border-radius:99px}
+.more{align-self:center;font:inherit;font-size:19px;font-weight:800;min-height:56px;padding:0 26px;border:2px solid #17734F;border-radius:999px;background:#FFFFFF;color:#17734F;cursor:pointer}
+.more[hidden]{display:none}
+.ok{flex-direction:row!important;align-items:flex-start;gap:14px!important;font-weight:600!important;font-size:17px!important;background:#FFFFFF;border-radius:16px;padding:16px;cursor:pointer}
+.ok input{width:28px;height:28px;flex:none;accent-color:#17734F;margin:0}
+#l-city[hidden]{display:none}
+
+/* preview */
+.pv{position:fixed;inset:0;z-index:50;background:#F7F6F1;display:flex;flex-direction:column;font-family:'Nunito',system-ui,sans-serif;color:#17262B}
+.pv[hidden]{display:none}
+.pv-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:#FFFFFF;border-bottom:1px solid #E4E2D9}
+.pv-top b{font-size:clamp(20px,2.4vw,26px);font-weight:900}
+.pv-x{font:inherit;font-size:18px;font-weight:800;min-height:52px;padding:0 18px;border:2px solid #CFCCC0;border-radius:999px;background:#FFFFFF;color:#17262B;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.pv-frame{flex:1;min-height:0;margin:14px auto 0;width:min(1180px,calc(100% - 24px));display:flex;flex-direction:column;border-radius:18px 18px 0 0;overflow:hidden;border:1px solid #E4E2D9;border-bottom:0;background:#FFFFFF;box-shadow:0 24px 60px -30px rgba(23,38,43,.4)}
+.pv-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#EFEDE6}
+.pv-bar i{width:11px;height:11px;border-radius:50%;background:#E06A5B}.pv-bar i:nth-child(2){background:#F2C14E}.pv-bar i:nth-child(3){background:#5DBB72}
+.pv-bar span{margin-left:8px;flex:1;background:#FFFFFF;border-radius:99px;padding:5px 14px;font-size:14px;color:#4A585D;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pv-frame iframe{flex:1;width:100%;border:0;display:block}
+.pv-act{background:#FFFFFF;border-top:1px solid #E4E2D9;padding:14px 16px calc(14px + env(safe-area-inset-bottom))}
+.pv-ask{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px}
+.pv-ask .go{flex:1 1 260px;min-height:68px;font-size:22px}
+.pv-ok{max-width:760px;margin:0 auto;font-size:20px;font-weight:800;background:#E3F1E8;color:#0F5A3D;border-radius:16px;padding:16px 18px;text-align:center}
+
+/* mobile call bar */
+.callbar{display:none}
+@media (max-width:700px){
+  .callbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:20;background:#FFFFFF;border-top:1px solid #E4E2D9;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+  .callbar a{flex:1;min-height:56px;border-radius:16px;font-weight:900;font-size:19px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px}
+  .cb-call{background:#FFD45C;color:#17262B}.cb-see{background:#17734F;color:#FFFFFF}
+  body{padding-bottom:84px}
+  body:has(.st input:focus) .callbar,.callbar.away{display:none}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile{min-height:120px;font-size:17px}
+}
+
+</style>
+</head>
+<body>
+
+<div style="font-family: 'Nunito', system-ui, sans-serif; color: #17262B; background: #F7F6F1; font-size: 19px; line-height: 1.55">
+
+  <!-- top -->
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E4E2D9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #17262B">
+        <span style="width: 48px; height: 48px; border-radius: 14px; background: #17734F; display: grid; place-items: center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9.5h13V10"></path><path d="M10 19.5v-5h4v5"></path></svg>
+        </span>
+        <span style="font-size: 26px; font-weight: 900; letter-spacing: -0.02em">nabosiden<span style="color: #17734F">.dk</span></span>
+      </a>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap">
+      <a href="/#se-din-side" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 24px; border-radius: 999px; background: #E3F1E8; color: #0F5A3D; font-weight: 800; font-size: 20px; text-decoration: none">Se din side</a>
+      <a href="tel:29910492" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 26px; border-radius: 999px; background: #FFD45C; color: #17262B; font-weight: 800; font-size: 20px; text-decoration: none">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
+        Ring 29 91 04 92
+      </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section id="top" style="max-width: 1160px; margin: 0 auto; padding: 64px 24px 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+      <span style="align-self: flex-start; background: #E3F1E8; color: #0F5A3D; font-weight: 800; font-size: 17px; padding: 8px 16px; border-radius: 999px">Hjemmesider til små, lokale firmaer</span>
+      <h1 style="margin: 0; font-size: clamp(40px, 5.4vw, 66px); line-height: 1.04; font-weight: 900; letter-spacing: -0.025em">Vi laver din hjemmeside.<br><span style="color: #17734F">Du skal ikke gøre noget.</span></h1>
+      <p style="margin: 0; font-size: 22px; color: #4A585D; max-width: 30em">Skriv dit navn og nummer. Så ringer vi dig op, laver siden og viser den til dig, før du betaler en krone.</p>
+
+      <form id="call" novalidate style="background: #FFFFFF; border-radius: 28px; padding: 28px; box-shadow: 0 2px 0 #E4E2D9, 0 20px 50px -24px rgba(23, 38, 43, 0.25); display: flex; flex-direction: column; gap: 18px; max-width: 520px">
+        <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 800; font-size: 20px">Dit navn
+          <input id="call-name" name="name" autocomplete="name" required placeholder="Fx Hanne" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 800; font-size: 20px">Dit telefonnummer
+          <input id="call-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Fx 12 34 56 78" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
+        </label>
+        <button type="submit" style="font: inherit; font-size: 24px; font-weight: 900; min-height: 72px; border: 0; border-radius: 18px; background: #17734F; color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 5px 0 #0F5A3D">
+          Ring mig op
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+        <p style="margin: 0; font-size: 16px; color: #4A585D; display: flex; gap: 8px; align-items: center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6z"></path></svg>
+          Gratis og uforpligtende. Vi ringer kun om din hjemmeside.
+        </p>
+        <p id="call-msg" class="msg" role="status" hidden></p>
+      </form>
+    </div>
+
+    <!-- illustration: a neighbour's house with a phone showing the site -->
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
+      <div style="position: relative; width: 100%; max-width: 440px; aspect-ratio: 1 / 1; border-radius: 40px; background: #E3F1E8; overflow: hidden">
+        <svg viewBox="0 0 440 440" width="100%" height="100%" aria-hidden="true">
+          <circle cx="352" cy="92" r="44" fill="#FFD45C"></circle>
+          <path d="M0 330 Q110 290 220 320 T440 300 V440 H0Z" fill="#BFE0CB"></path>
+          <path d="M60 330 V210 L150 140 L240 210 V330Z" fill="#FFFFFF" stroke="#17262B" stroke-width="5" stroke-linejoin="round"></path>
+          <path d="M44 222 L150 132 L256 222" fill="none" stroke="#17734F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+          <rect x="128" y="262" width="44" height="68" rx="6" fill="#FFD45C" stroke="#17262B" stroke-width="5"></rect>
+          <rect x="84" y="226" width="34" height="30" rx="5" fill="#E3F1E8" stroke="#17262B" stroke-width="5"></rect>
+          <rect x="184" y="226" width="34" height="30" rx="5" fill="#E3F1E8" stroke="#17262B" stroke-width="5"></rect>
+          <g transform="translate(250 150) rotate(6)">
+            <rect x="0" y="0" width="140" height="250" rx="24" fill="#17262B"></rect>
+            <rect x="9" y="12" width="122" height="226" rx="16" fill="#FFFFFF"></rect>
+            <rect x="21" y="30" width="62" height="10" rx="5" fill="#17734F"></rect>
+            <rect x="21" y="54" width="98" height="14" rx="5" fill="#17262B"></rect>
+            <rect x="21" y="74" width="80" height="14" rx="5" fill="#17262B"></rect>
+            <rect x="21" y="100" width="98" height="8" rx="4" fill="#CFCCC0"></rect>
+            <rect x="21" y="114" width="70" height="8" rx="4" fill="#CFCCC0"></rect>
+            <rect x="21" y="140" width="98" height="34" rx="12" fill="#17734F"></rect>
+            <rect x="21" y="186" width="46" height="36" rx="8" fill="#E3F1E8"></rect>
+            <rect x="73" y="186" width="46" height="36" rx="8" fill="#FFF1C2"></rect>
+          </g>
+          <g transform="translate(330 120)">
+            <circle r="24" fill="#17734F"></circle>
+            <path d="M-10 0 l7 7 l13 -14" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 steps -->
+  <section style="background: #FFFFFF; border-top: 1px solid #E4E2D9; border-bottom: 1px solid #E4E2D9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
+      <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em; text-align: center">Sådan gør vi. Tre trin, det er det hele.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+        <div style="background: #F7F6F1; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 64px; height: 64px; border-radius: 50%; background: #17734F; color: #FFFFFF; font-size: 32px; font-weight: 900; display: grid; place-items: center">1</span>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 900">Vi ringer til dig</h3>
+          <p style="margin: 0; color: #4A585D">En kort snak. Du fortæller, hvad du laver. Vi skriver det ned.</p>
+        </div>
+        <div style="background: #F7F6F1; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 64px; height: 64px; border-radius: 50%; background: #17734F; color: #FFFFFF; font-size: 32px; font-weight: 900; display: grid; place-items: center">2</span>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 900">Vi laver siden</h3>
+          <p style="margin: 0; color: #4A585D">Tekster, billeder og opsætning. Du skal ikke logge ind eller lære noget.</p>
+        </div>
+        <div style="background: #F7F6F1; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+          <span style="width: 64px; height: 64px; border-radius: 50%; background: #FFD45C; color: #17262B; font-size: 32px; font-weight: 900; display: grid; place-items: center">3</span>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 900">Du siger ja eller nej</h3>
+          <p style="margin: 0; color: #4A585D">Kan du lide den, går den online. Kan du ikke, koster det ingenting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- reviews -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
+      <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Du er i trygge hænder</h2>
+      <p style="margin: 0; color: #4A585D; font-size: 21px">Du ser siden, før du betaler noget som helst.</p>
+    </div>
+    <a href="/om-mig" class="proof">
+      <span class="proof-img"><img src="/havegutterne.jpg" alt="Forsiden af havegutterne.dk" width="1400" height="774" loading="lazy"></span>
+      <span class="proof-txt">
+        <b>Se en side, jeg har lavet</b>
+        <span>HaveGutterne er min egen lokale virksomhed, og hjemmesiden har jeg selv bygget. Den samme omhu får din side.</span>
+        <span class="proof-go">Læs om mig <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+      </span>
+    </a>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: center; align-items: center; font-weight: 800; font-size: 18px; color: #17262B">
+      <span style="display: flex; gap: 8px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>0 kr i opstart</span>
+      <span style="display: flex; gap: 8px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Ingen binding</span>
+      <span style="display: flex; gap: 8px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Du ser siden, før du betaler</span>
+      <span style="display: flex; gap: 8px; align-items: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Dansk firma, du kan ringe til</span>
+    </div>
+  </section>
+
+  <!-- who -->
+  <section style="background: #E3F1E8">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
+        <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Hvem laver vi sider til?</h2>
+        <p style="margin: 0; color: #2E4A3E; font-size: 21px; max-width: 34em">Små firmaer, der hellere vil passe deres arbejde end sidde ved en computer.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(max(150px, calc((100% - 48px) / 4)), 1fr)); gap: 16px">
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 6 13h5l-1 8 7-10h-5z"></path></svg></span>Elektriker
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v6a5 5 0 0 0 10 0V3"></path><path d="M12 14v7M9 21h6"></path></svg></span>VVS og kloak
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 12 4l9 8"></path><path d="M6 10v10h12V10"></path></svg></span>Tømrer og tag
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8"></path><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7zM12 13c4 0 6-3 6-7-4 0-6 3-6 7z"></path></svg></span>Have og anlæg
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5 20 18M8.5 15.5 20 6"></path></svg></span>Frisør og skønhed
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-6.5-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 3.5C20 14.5 17 18 12 21z"></path></svg></span>Klinik og sundhed
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-3l2-5h14l2 5v3z"></path><circle cx="7" cy="16.5" r="1.8"></circle><circle cx="17" cy="16.5" r="1.8"></circle></svg></span>Auto og transport
+        </div>
+        <div style="background: #FFFFFF; border-radius: 22px; padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; font-weight: 800; font-size: 19px; box-shadow: 0 2px 0 #E4E2D9">
+          <span style="width: 64px; height: 64px; border-radius: 20px; background: #E3F1E8; display: grid; place-items: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"></path><path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16"></path></svg></span>Café og mad
+        </div>
+      </div>
+      <a href="/#se-din-side" style="align-self: center; display: inline-flex; align-items: center; gap: 12px; min-height: 72px; padding: 0 36px; border-radius: 999px; background: #17734F; color: #FFFFFF; font-weight: 900; font-size: 23px; text-decoration: none; box-shadow: 0 5px 0 #0F5A3D">Se din nye side nu
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <p style="margin: -18px 0 0; text-align: center; color: #2E4A3E; font-size: 17px">Over 45 fag. Det tager et minut, og det er gratis.</p>
+    </div>
+  </section>
+
+  <!-- se din side -->
+  <section id="se-din-side" class="sds">
+    <div class="sds-in">
+      <div class="sds-head">
+        <span class="pill">Gratis og uden forpligtelser</span>
+        <h2>Se din nye side på et minut</h2>
+        <p>Tre små trin. Du kan ikke gøre noget forkert.</p>
+      </div>
+      <ol class="dots" aria-label="Trin">
+        <li id="d1" class="on"><span></span>Navn</li>
+        <li id="d2"><span></span>Fag</li>
+        <li id="d3"><span></span>Din side</li>
+      </ol>
+
+      <div class="card">
+        <!-- step 1 -->
+        <form id="st1" class="st" novalidate>
+          <h3>Hvad hedder dit firma?</h3>
+          <p class="sub">Så sætter vi navnet ind på din nye side.</p>
+          <div class="combo">
+            <label for="s-firm">Firmanavn</label>
+            <input id="s-firm" autocomplete="off" placeholder="Fx Hansens VVS" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="s-sug" enterkeyhint="next">
+            <ul id="s-sug" class="sug" role="listbox" hidden></ul>
+          </div>
+          <p id="s-found" class="found" hidden></p>
+          <p id="s-err1" class="err" hidden>Skriv navnet på dit firma.</p>
+          <button class="go" type="submit">Næste <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          <p class="mini"><span>Gratis</span><span>Intet kort</span><span>Tager et minut</span></p>
+        </form>
+
+        <!-- step 2 -->
+        <div id="st2" class="st" hidden>
+          <h3>Hvad laver <span id="s-who">dit firma</span>?</h3>
+          <p id="s-guess" class="found" hidden></p>
+          <div class="search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5 21 21"></path></svg>
+            <input id="s-q" type="search" placeholder="Skriv dit fag, fx frisør" aria-label="Skriv dit fag" autocomplete="off">
+          </div>
+          <div id="s-grid" class="grid" role="radiogroup" aria-label="Fag"></div>
+          <button type="button" id="s-more" class="more">Vis alle fag</button>
+          <p id="s-none" class="sub" hidden>Står dit fag ikke her? Vælg "Andet fag", så laver vi den til dig.</p>
+          <p id="s-err2" class="err" hidden>Tryk på det fag, der passer bedst.</p>
+          <div class="row">
+            <button type="button" id="s-next2" class="go">Næste <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+            <button type="button" class="back" data-back="1">Tilbage</button>
+          </div>
+        </div>
+
+        <!-- step 3 -->
+        <form id="st3" class="st" novalidate hidden>
+          <h3>Næsten færdig!</h3>
+          <p class="sub">Hvem skal vi ringe til, hvis du vil have siden?</p>
+          <label for="s-name">Dit navn<input id="s-name" autocomplete="name" placeholder="Fx Hanne"></label>
+          <label for="s-phone">Telefonnummer<small>Det står også på din nye side</small><input id="s-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Fx 12 34 56 78"></label>
+          <label for="s-city" id="l-city">By<small>Hvor holder firmaet til?</small><input id="s-city" autocomplete="address-level2" placeholder="Fx Odense"></label>
+          <label class="ok" for="s-ok"><input type="checkbox" id="s-ok"><span>Ja tak, Nabosiden må ringe til mig om min nye side. <a href="/privatliv">Sådan passer vi på dine oplysninger</a>.</span></label>
+          <p id="s-err3" class="err" hidden></p>
+          <div class="row">
+            <button class="go" type="submit">Vis min side <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+            <button type="button" class="back" data-back="2">Tilbage</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="pv" id="pv" hidden role="dialog" aria-modal="true" aria-labelledby="pv-t">
+    <div class="pv-top">
+      <b id="pv-t">Her er din nye side!</b>
+      <button type="button" id="pv-x" class="pv-x">Luk <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+    </div>
+    <div class="pv-frame">
+      <div class="pv-bar"><i></i><i></i><i></i><span id="pv-url">ditfirma.dk</span></div>
+      <iframe id="pv-if" title="Din nye hjemmeside"></iframe>
+    </div>
+    <div class="pv-act">
+      <div id="pv-ask" class="pv-ask">
+        <button type="button" id="pv-yes" class="go">Ja tak, ring mig op</button>
+        <button type="button" id="pv-no" class="back">Prøv et andet fag</button>
+      </div>
+      <p id="pv-ok" class="pv-ok" hidden></p>
+    </div>
+  </div>
+
+
+  <!-- price -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 72px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
+      <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Vælg den pakke, der passer</h2>
+      <p style="margin: 0; color: #4A585D; font-size: 21px">Fast pris hver måned. Domæne, hosting og hjælp er med i dem alle.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; align-items: stretch">
+        <div style="background: #FFFFFF; color: #17262B; border-radius: 30px; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 2px 0 #E4E2D9">
+          
+          <h3 style="margin: 0; font-size: 28px; font-weight: 900">Start</h3>
+          <p style="margin: -10px 0 0; color: #4A585D; font-size: 18px">Bare synlig på nettet</p>
+          <p style="margin: 0; font-size: 56px; line-height: 1; font-weight: 900; letter-spacing: -0.03em">499<span style="font-size: 20px; font-weight: 700"> kr/md</span></p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 18px; font-weight: 600"><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Én flot side med dit logo</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Dit eget .dk-domæne</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Ring-nu-knap</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Små rettelser med</span></li></ul>
+          <a href="#top" data-focus-call style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 64px; border-radius: 18px; background: #17734F; color: #FFFFFF; font-weight: 900; font-size: 21px; text-decoration: none">Vælg Start</a>
+        </div>
+        <div style="background: #FBF8F0; color: #17262B; border-radius: 30px; padding: 32px; display: flex; flex-direction: column; gap: 18px; border: 3px solid #17734F; box-shadow: 0 18px 40px -26px rgba(23, 115, 79, 0.55)">
+          <span style="align-self: flex-start; background: #E3F1E8; color: #0F5A3D; font-weight: 900; font-size: 15px; padding: 6px 14px; border-radius: 999px">Mest valgt</span>
+          <h3 style="margin: 0; font-size: 28px; font-weight: 900">Vækst</h3>
+          <p style="margin: -10px 0 0; color: #4A585D; font-size: 18px">Flere kunder ringer</p>
+          <p style="margin: 0; font-size: 56px; line-height: 1; font-weight: 900; letter-spacing: -0.03em">749<span style="font-size: 20px; font-weight: 700"> kr/md</span></p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 18px; font-weight: 600"><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Alt i Start</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Op til 5 sider</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Vi skriver teksterne</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Dine anmeldelser vises</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Vi opdaterer siden hver måned</span></li></ul>
+          <a href="#top" data-focus-call style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 64px; border-radius: 18px; background: #17734F; color: #FFFFFF; font-weight: 900; font-size: 21px; box-shadow: 0 5px 0 #0F5A3D; text-decoration: none">Vælg Vækst</a>
+        </div>
+        <div style="background: #FFFFFF; color: #17262B; border-radius: 30px; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 2px 0 #E4E2D9">
+          
+          <h3 style="margin: 0; font-size: 28px; font-weight: 900">Pro</h3>
+          <p style="margin: -10px 0 0; color: #4A585D; font-size: 18px">Du dækker et stort område</p>
+          <p style="margin: 0; font-size: 56px; line-height: 1; font-weight: 900; letter-spacing: -0.03em">999<span style="font-size: 20px; font-weight: 700"> kr/md</span></p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 18px; font-weight: 600"><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Alt i Vækst</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>En side for hver by</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Rapport hver måned</span></li><li style="display: flex; gap: 10px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Svar samme dag</span></li></ul>
+          <a href="#top" data-focus-call style="margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 64px; border-radius: 18px; background: #17734F; color: #FFFFFF; font-weight: 900; font-size: 21px; text-decoration: none">Vælg Pro</a>
+        </div>
+    </div>
+    <p style="margin: 0; text-align: center; color: #4A585D; font-size: 18px; font-weight: 700">0 kr i opstart · Ingen binding · Priser ekskl. moms</p>
+  </section>
+
+  <!-- questions -->
+  <section style="background: #FFFFFF; border-top: 1px solid #E4E2D9">
+    <div style="max-width: 820px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0 0 16px; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em; text-align: center">Det spørger folk tit om</h2>
+      <details open style="background: #F7F6F1; border-radius: 22px; padding: 22px 28px">
+        <summary style="font-size: 22px; font-weight: 800; cursor: pointer">Skal jeg kunne noget med computere?</summary>
+        <p style="margin: 12px 0 0; color: #4A585D">Nej. Du skal bare tage telefonen, når vi ringer. Resten klarer vi.</p>
+      </details>
+      <details style="background: #F7F6F1; border-radius: 22px; padding: 22px 28px">
+        <summary style="font-size: 22px; font-weight: 800; cursor: pointer">Hvad hvis jeg ikke kan lide siden?</summary>
+        <p style="margin: 12px 0 0; color: #4A585D">Så siger du nej tak, og det koster ingenting.</p>
+      </details>
+      <details style="background: #F7F6F1; border-radius: 22px; padding: 22px 28px">
+        <summary style="font-size: 22px; font-weight: 800; cursor: pointer">Hvor hurtigt er den klar?</summary>
+        <p style="margin: 12px 0 0; color: #4A585D">Du ser et udkast samme dag eller dagen efter, vi har talt sammen.</p>
+      </details>
+      <details style="background: #F7F6F1; border-radius: 22px; padding: 22px 28px">
+        <summary style="font-size: 22px; font-weight: 800; cursor: pointer">Kan jeg stoppe igen?</summary>
+        <p style="margin: 12px 0 0; color: #4A585D">Ja. Der er ingen binding. Du giver bare besked.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- bottom call -->
+  <section style="background: #17734F; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 42px); font-weight: 900">Hellere snakke med det samme?</h2>
+        <p style="margin: 0; font-size: 21px; color: #D6EDE0">Ring direkte til Anton, der laver din side.</p>
+      </div>
+      <a href="tel:29910492" style="display: inline-flex; align-items: center; gap: 14px; min-height: 76px; padding: 0 36px; border-radius: 999px; background: #FFD45C; color: #17262B; font-weight: 900; font-size: 28px; text-decoration: none">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
+        29 91 04 92
+      </a>
+    </div>
+  </section>
+
+  <footer style="background: #FFFFFF; border-top: 1px solid #E4E2D9">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; font-size: 18px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 24px; font-weight: 900">nabosiden<span style="color: #17734F">.dk</span></span>
+        <span style="color: #4A585D">Hjemmesider til små, lokale firmaer. Vi gør det hele for dig.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-weight: 900; font-size: 19px">Kontakt</span>
+        <span>Anton Dyreborg</span>
+        <a href="tel:29910492" style="color: #17262B; text-decoration: none; font-weight: 700">29 91 04 92</a>
+        <span>nabosiden@gmail.com</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-weight: 900; font-size: 19px">Information</span>
+        <a href="/om-mig" style="color: #17262B; text-decoration: none; font-weight: 700">Hvem er jeg?</a>
+        <a href="/spoergsmaal" style="color: #17262B; text-decoration: none; font-weight: 700">Spørgsmål og svar</a>
+        <a href="/handelsbetingelser" style="color: #17262B; text-decoration: none; font-weight: 700">Handelsbetingelser</a>
+        <a href="/privatliv" style="color: #17262B; text-decoration: none; font-weight: 700">Privatlivspolitik</a>
+        <a href="/cookies" style="color: #17262B; text-decoration: none; font-weight: 700">Cookies</a>
+      </div>
+    </div>
+    <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px 32px; border-top: 1px solid #E4E2D9; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 15px; color: #4A585D">
+      <span>© 2026 Nabosiden v/ Anton Dyreborg</span><span>Alle priser er ekskl. moms</span>
+    </div>
+  </footer>
+</div>
+
+<nav class="callbar" aria-label="Kontakt">
+  <a href="tel:29910492" class="cb-call"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>Ring nu</a>
+  <a href="#se-din-side" class="cb-see">Se din side</a>
+</nav>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var TRADES = [{"k": "kloakmester", "l": "Kloakmester", "s": "Kloak og dræn", "c": "hv", "w": "kloak dræn slamsuger rør", "a": "#E8620C", "i": "#15232C", "ai": "#FFFFFF", "ico": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M5 9h14M3.8 12h16.4M5 15h14\"/>"}, {"k": "elektriker", "l": "Elektriker", "s": "El og installation", "c": "hv", "w": "el elinstallatør elektriker strøm elinstallation", "a": "#F5C400", "i": "#13203A", "ai": "#13203A", "ico": "<path d=\"M13.5 2.5 5 13.5h6l-1 8 8.5-11h-6z\"/>"}, {"k": "vvs", "l": "VVS", "s": "Vand, varme og bad", "c": "hv", "w": "vvs blikkenslager varme varmepumpe bad rørlægger vand", "a": "#A8501F", "i": "#0E2C47", "ai": "#FFFFFF", "ico": "<path d=\"M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z\"/><path d=\"M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5\"/>"}, {"k": "tagdaekker", "l": "Tagdækker", "s": "Tag og tagrender", "c": "hv", "w": "tag tagdækker tagrender", "a": "#B03A24", "i": "#27323B", "ai": "#FFFFFF", "ico": "<path d=\"M2.5 12.5 12 4l9.5 8.5\"/><path d=\"M5.5 10v10h13V10\"/><path d=\"M10 20v-5h4v5\"/>"}, {"k": "toemrer", "l": "Tømrer", "s": "Træ og byggeri", "c": "hv", "w": "tømrer snedker byg træ", "a": "#D49A3E", "i": "#212428", "ai": "#212428", "ico": "<path d=\"m14.5 3.5 6 6-2.5 2.5-6-6z\"/><path d=\"M13.2 8.8 4 18l2 2 9.2-9.2\"/>"}, {"k": "murer", "l": "Murer", "s": "Mur, puds og fliser", "c": "hv", "w": "murer mur puds fliser facade", "a": "#2F5D50", "i": "#26302C", "ai": "#FFFFFF", "ico": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"1.5\"/><path d=\"M3 9.7h18M3 14.3h18M9 5v4.7M15 9.7v4.6M9 14.3V19\"/>"}, {"k": "maler", "l": "Maler", "s": "Inde og ude", "c": "hv", "w": "maler maling", "a": "#E3A332", "i": "#173445", "ai": "#173445", "ico": "<rect x=\"3.5\" y=\"3.5\" width=\"13\" height=\"5.5\" rx=\"1.5\"/><path d=\"M16.5 6.2h3.5v6h-8.5v3\"/><rect x=\"10\" y=\"15\" width=\"3\" height=\"6.5\" rx=\"1\"/>"}, {"k": "gulvlaegger", "l": "Gulvlægger", "s": "Gulve og slibning", "c": "hv", "w": "gulv gulvlægger gulvsliber parket", "a": "#23407A", "i": "#241C16", "ai": "#FFFFFF", "ico": "<path d=\"M3 17 9 21l12-8-6-4z\"/><path d=\"m6 15 6 4M9 13l6 4M12 11l6 4\"/><path d=\"M8 3v5M5.5 5.5h5\"/>"}, {"k": "anlaegsgartner", "l": "Anlægsgartner", "s": "Have og belægning", "c": "hv", "w": "anlægsgartner gartner have brolægger belægning", "a": "#3C8D3F", "i": "#1D2E24", "ai": "#FFFFFF", "ico": "<path d=\"M12 21v-9\"/><path d=\"M12 13C7 13 4.5 9.5 4.5 5c4.5 0 7.5 3 7.5 8zM12 15.5c4 0 7.5-2.5 7.5-7-4 0-7.5 2.5-7.5 7z\"/>"}, {"k": "laasesmed", "l": "Låsesmed", "s": "Låse og døgnvagt", "c": "hv", "w": "låsesmed lås nøgle smed", "a": "#1FB5A5", "i": "#211A2B", "ai": "#0E1A1C", "ico": "<circle cx=\"8\" cy=\"15.5\" r=\"4.5\"/><path d=\"m11.2 12.3 8.8-8.8M16.5 7l2.5 2.5M14 9.5l2 2\"/>"}, {"k": "frisoer", "l": "Frisør", "s": "Klip og farve", "c": "sk", "w": "frisør hår salon frisor frisure klip hårklip", "a": "#B85C6B", "i": "#2B1F24", "ai": "#FFFFFF", "ico": "<circle cx=\"6.5\" cy=\"17.5\" r=\"3\"/><circle cx=\"17.5\" cy=\"17.5\" r=\"3\"/><path d=\"M8.6 15.3 19 3.5M15.4 15.3 5 3.5\"/>"}, {"k": "negle", "l": "Negle og vipper", "s": "Negle, vipper og bryn", "c": "sk", "w": "negle neglesalon vipper bryn skønhed makeup lashes manicure", "a": "#6B3FA0", "i": "#221A30", "ai": "#FFFFFF", "ico": "<rect x=\"9.5\" y=\"2.5\" width=\"5\" height=\"5\" rx=\"1\"/><path d=\"M7.5 10a2.5 2.5 0 0 1 2.5-2.5h4a2.5 2.5 0 0 1 2.5 2.5v9a2.5 2.5 0 0 1-2.5 2.5h-4A2.5 2.5 0 0 1 7.5 19z\"/><path d=\"M10.5 12.5v4\"/>"}, {"k": "fysio", "l": "Fysioterapeut", "s": "Behandling og træning", "c": "sk", "w": "fysioterapeut fysio fysioterapi træning", "a": "#E07A4F", "i": "#12343B", "ai": "#FFFFFF", "ico": "<circle cx=\"12\" cy=\"4.5\" r=\"2\"/><path d=\"M12 8v6.5M5.5 10l6.5 2 6.5-2M12 14.5 8 21M12 14.5l4 6.5\"/>"}, {"k": "klinik", "l": "Kiropraktor / massør", "s": "Klinik og massage", "c": "sk", "w": "kiropraktor massør massage zoneterapeut akupunktur klinik", "a": "#5B4A94", "i": "#2A2540", "ai": "#FFFFFF", "ico": "<path d=\"M7 12c0-3 2-5 5-5s5 2 5 5\"/><path d=\"M4 15.5c2.5 0 3-2 5-2s2.5 2 3 2 1-2 3-2 2.5 2 5 2\"/><path d=\"M4 19.5c2.5 0 3-2 5-2s2.5 2 3 2 1-2 3-2 2.5 2 5 2\"/><path d=\"M12 3v1.5\"/>"}, {"k": "autovaerksted", "l": "Autoværksted", "s": "Service og reparation", "c": "ov", "w": "auto autoværksted bil mekaniker værksted dæk autoreparation bilværksted", "a": "#C8202F", "i": "#1B1D21", "ai": "#FFFFFF", "ico": "<path d=\"M4.5 14.5 6.3 9a2 2 0 0 1 1.9-1.4h7.6A2 2 0 0 1 17.7 9l1.8 5.5\"/><rect x=\"3\" y=\"14.5\" width=\"18\" height=\"4\" rx=\"1.5\"/><path d=\"M6 18.5v2M18 18.5v2\"/><circle cx=\"7.5\" cy=\"16.5\" r=\".6\"/><circle cx=\"16.5\" cy=\"16.5\" r=\".6\"/>"}, {"k": "restaurant", "l": "Restaurant", "s": "Mad og takeaway", "c": "ov", "w": "restaurant pizzeria takeaway mad spisested", "a": "#B23A1E", "i": "#2E1C14", "ai": "#FFFFFF", "ico": "<path d=\"M7 2.5v8a2 2 0 0 0 2 2v9M5 2.5v5.5M9 2.5v5.5\"/><path d=\"M17 21.5v-19c-2.5 1.5-3.5 5-3.5 8.5 0 1.5.8 2.5 2 2.5H17\"/>"}, {"k": "rengoering", "l": "Rengøring", "s": "Rengøring og vinduer", "c": "ov", "w": "rengøring vinduespudser vinduer rengoring", "a": "#3347D1", "i": "#16213F", "ai": "#FFFFFF", "ico": "<path d=\"M12 3.5 13.7 8l4.3 1.7-4.3 1.7L12 16l-1.7-4.6L6 9.7 10.3 8z\"/><path d=\"M18.5 15.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z\"/><path d=\"M5 17.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z\"/>"}, {"k": "smed", "l": "Smed", "s": "Porte, rækværk og stål", "c": "hv", "w": "smed klejnsmed stål svejs port rækværk", "a": "#F2A81D", "i": "#1E2226", "ai": "#1E2226", "ico": "<path d=\"M3 9h13l4-3v6l-4-1H9v3H5z\"/><path d=\"M7 14v6M4 20h6\"/>"}, {"k": "entreprenoer", "l": "Entreprenør", "s": "Jord, kloak og nedrivning", "c": "hv", "w": "entreprenør jord graver udgravning nedrivning", "a": "#4F7A1F", "i": "#2A2419", "ai": "#FFFFFF", "ico": "<path d=\"M2.5 19.5h11\"/><rect x=\"3\" y=\"13\" width=\"9\" height=\"4.5\" rx=\"1\"/><path d=\"M5 13v-3h4l1 3\"/><path d=\"M12 14l4-7 4 3-2 3\"/><circle cx=\"5\" cy=\"19.5\" r=\"1\"/><circle cx=\"10\" cy=\"19.5\" r=\"1\"/>"}, {"k": "traefaelder", "l": "Træfælder", "s": "Fældning og beskæring", "c": "hv", "w": "træfælder træ fældning arborist beskæring stub", "a": "#C2480E", "i": "#22201C", "ai": "#FFFFFF", "ico": "<path d=\"M12 21v-6\"/><path d=\"M12 15c-4 0-7-2.5-7-6a7 7 0 0 1 14 0c0 3.5-3 6-7 6z\"/><path d=\"M3 21h6\"/>"}, {"k": "facaderens", "l": "Facade- og algerens", "s": "Tag, facade og fliser", "c": "hv", "w": "algerens facaderens tagrens fliserens imprægnering", "a": "#A3CC3C", "i": "#1D2A33", "ai": "#17240A", "ico": "<path d=\"M4 21V9l8-5 8 5v12\"/><path d=\"M8.5 21v-6h7v6\"/><path d=\"M15 3.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4L13 5.5l1.4-.6z\"/>"}, {"k": "tandlaege", "l": "Tandlæge", "s": "Tænder og tandpleje", "c": "sk", "w": "tandlæge tandklinik tandplejer tænder", "a": "#1D6FB8", "i": "#0F2B46", "ai": "#FFFFFF", "ico": "<path d=\"M7.5 3.5c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.4 2.6 1 5 2.5 5s1.5-3.5 2.5-5.5c.5-1 1.5-1 2 0 1 2 1 5.5 2.5 5.5s2.1-2.4 2.5-5c.5-3 2-4.5 2-7.5 0-2.5-1.5-4.5-4-4.5-2 0-3 1.2-4.5 1.2S9.5 3.5 7.5 3.5z\"/>"}, {"k": "massoer", "l": "Massør / zoneterapeut", "s": "Massage og zoneterapi", "c": "sk", "w": "massør massage zoneterapeut zoneterapi akupunktur", "a": "#4F6B57", "i": "#2C3A32", "ai": "#FFFFFF", "ico": "<path d=\"M12 21c-4.5-2-7-5.5-7-10 3 0 5.5 1.5 7 4 1.5-2.5 4-4 7-4 0 4.5-2.5 8-7 10z\"/><path d=\"M12 15c-1-3-1-6.5 0-10 1 3.5 1 7 0 10z\"/>"}, {"k": "traener", "l": "Personlig træner", "s": "Træning og vægttab", "c": "sk", "w": "personlig træner træning fitness pt", "a": "#C6F135", "i": "#14161A", "ai": "#11140A", "ico": "<path d=\"M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11\"/>"}, {"k": "dyrlaege", "l": "Dyrlæge", "s": "Hunde og katte", "c": "ov", "w": "dyrlæge dyreklinik hund kat", "a": "#F0B429", "i": "#1F2A36", "ai": "#1F2A36", "ico": "<circle cx=\"6\" cy=\"10\" r=\"2\"/><circle cx=\"10\" cy=\"5.5\" r=\"2\"/><circle cx=\"14\" cy=\"5.5\" r=\"2\"/><circle cx=\"18\" cy=\"10\" r=\"2\"/><path d=\"M12 11c-3 0-6 4.5-6 7a2.5 2.5 0 0 0 3.5 2.3c1.6-.6 3.4-.6 5 0A2.5 2.5 0 0 0 18 18c0-2.5-3-7-6-7z\"/>"}, {"k": "hundefrisoer", "l": "Hundefrisør", "s": "Klip og hundepasning", "c": "ov", "w": "hundefrisør hund hundepasning trim", "a": "#F2A81D", "i": "#1F2A44", "ai": "#1F2A44", "ico": "<path d=\"M5 8 3.5 4.5 8 6M19 8l1.5-3.5L16 6\"/><path d=\"M5 8c0 6 2 11 7 11s7-5 7-11c-2-2-4.5-3-7-3S7 6 5 8z\"/><circle cx=\"9.5\" cy=\"11\" r=\".6\"/><circle cx=\"14.5\" cy=\"11\" r=\".6\"/><path d=\"M11 14.5h2l-1 1.2z\"/>"}, {"k": "koereskole", "l": "Køreskole", "s": "Kørekort og teori", "c": "ov", "w": "køreskole kørekort kørelærer", "a": "#3DDC84", "i": "#0E2A2F", "ai": "#0A2A1A", "ico": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/><path d=\"M3.5 10.5c3-1 5.5-1.5 8.5-1.5s5.5.5 8.5 1.5M10.2 13.5 6.5 20M13.8 13.5l3.7 6.5\"/>"}, {"k": "flyttefirma", "l": "Flyttefirma", "s": "Flytning og opbevaring", "c": "ov", "w": "flyttefirma flytning flyttemand opbevaring", "a": "#F4B223", "i": "#1D2A3A", "ai": "#1D2A3A", "ico": "<rect x=\"2.5\" y=\"7\" width=\"12\" height=\"9\" rx=\"1\"/><path d=\"M14.5 10h4l3 3v3h-7z\"/><circle cx=\"6.5\" cy=\"17.5\" r=\"1.8\"/><circle cx=\"17.5\" cy=\"17.5\" r=\"1.8\"/>"}, {"k": "ejendomsservice", "l": "Ejendomsservice", "s": "Vicevært og drift", "c": "ov", "w": "ejendomsservice vicevært snerydning boligforening", "a": "#F2A900", "i": "#1E2A2F", "ai": "#1E2A2F", "ico": "<rect x=\"4\" y=\"3.5\" width=\"11\" height=\"17\" rx=\"1\"/><path d=\"M7.5 7.5h1M10.5 7.5h1M7.5 11h1M10.5 11h1M8 20.5v-4h3v4\"/><path d=\"M16.5 13.5l3.5 3.5-1.5 1.5-3.5-3.5M17 11.5a2.5 2.5 0 0 0 2.5 2.5\"/>"}, {"k": "psykolog", "l": "Psykolog / terapeut", "s": "Samtaler og terapi", "c": "sk", "w": "psykolog terapeut psykoterapeut coach parterapi samtale terapi", "a": "#A24E36", "i": "#1E3340", "ai": "#FFFFFF", "ico": "<path d=\"M5 18c-1.5-1.5-2-3.5-2-5.5C3 8 6.5 4 11.5 4S20 7.5 20 11.5c0 2.5-1.5 4.5-3.5 5.5v3h-6v-2.5\"/><path d=\"M11.5 9.5c.8-1.6 3.5-1.2 3.5.8 0 1.6-2 2-2 3.2\"/>"}, {"k": "diaetist", "l": "Diætist", "s": "Kost og vægttab", "c": "sk", "w": "diætist kostvejleder ernæring kost vægttab", "a": "#C73E2B", "i": "#1E3526", "ai": "#FFFFFF", "ico": "<circle cx=\"12\" cy=\"13\" r=\"7.5\"/><path d=\"M12 9.5v7M8.5 13h7\"/><path d=\"M14 3.5c.5-1 1.5-1.5 2.5-1.5\"/>"}, {"k": "fodterapeut", "l": "Fodterapeut", "s": "Fodpleje og indlæg", "c": "sk", "w": "fodterapeut fodpleje fødder fodklinik", "a": "#B4531A", "i": "#1D2F3A", "ai": "#FFFFFF", "ico": "<path d=\"M8 21c-2.5 0-3.5-2-3-4.5L7 9c.6-2.5 4-2.5 4 .5 0 2-1 3-1 5s2 2 2 4-1.5 2.5-4 2.5z\"/><circle cx=\"13\" cy=\"5\" r=\"1.2\"/><circle cx=\"15.8\" cy=\"6.5\" r=\"1\"/><circle cx=\"17.6\" cy=\"8.8\" r=\".9\"/>"}, {"k": "optiker", "l": "Optiker", "s": "Briller og kontaktlinser", "c": "sk", "w": "optiker briller kontaktlinser synsprøve", "a": "#7B1E3A", "i": "#1A1618", "ai": "#FFFFFF", "ico": "<circle cx=\"6.5\" cy=\"14\" r=\"3.5\"/><circle cx=\"17.5\" cy=\"14\" r=\"3.5\"/><path d=\"M10 14c1.3-1 2.7-1 4 0M3 13l1.5-5M21 13l-1.5-5\"/>"}, {"k": "barber", "l": "Barber", "s": "Herreklip og skæg", "c": "sk", "w": "barber barbershop herrefrisør skæg herreklip", "a": "#D3A04B", "i": "#16202B", "ai": "#16202B", "ico": "<rect x=\"8\" y=\"3\" width=\"8\" height=\"18\" rx=\"4\"/><path d=\"M8 8l8 3M8 13l8 3\"/>"}, {"k": "kosmetolog", "l": "Kosmetolog / hudpleje", "s": "Ansigt, voks og IPL", "c": "sk", "w": "kosmetolog hudpleje hudklinik ansigtsbehandling voks ipl spraytan solcenter", "a": "#2F6B57", "i": "#1C2A25", "ai": "#FFFFFF", "ico": "<path d=\"M12 21c-4 0-7-3-7-7 0-4 3-6 4-10 1 2 3 3 3 5 0-2 1.5-3.5 3-4 .5 3 4 5 4 9 0 4-3 7-7 7z\"/>"}, {"k": "tatovoer", "l": "Tatovør", "s": "Tatovering og piercing", "c": "sk", "w": "tatovør tatovering tattoo piercing", "a": "#1F3FCF", "i": "#14121A", "ai": "#FFFFFF", "ico": "<path d=\"M14.5 3.5l6 6-8.5 8.5-6-6z\"/><path d=\"M6 12l-2.5 2.5 6 6L12 18M3.5 20.5l2-2\"/>"}, {"k": "bager", "l": "Bager", "s": "Brød og kager", "c": "ov", "w": "bager bageri konditori kager brød", "a": "#A65A1E", "i": "#3A2416", "ai": "#FFFFFF", "ico": "<path d=\"M4 15c0-4 3.5-7 8-7s8 3 8 7v2.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z\"/><path d=\"M9 9.5l1.5 4M15 9.5l-1.5 4M12 8v5\"/>"}, {"k": "slagter", "l": "Slagter / fiskehandler", "s": "Kød, fisk og delikatesse", "c": "ov", "w": "slagter fiskehandler fisk kød delikatesse", "a": "#9E2B2F", "i": "#2A1714", "ai": "#FFFFFF", "ico": "<path d=\"M4 4h10v9H4z\"/><path d=\"M14 8.5h2.5a3.5 3.5 0 0 1 3.5 3.5v8\"/><circle cx=\"7\" cy=\"7\" r=\"1\"/>"}, {"k": "cafe", "l": "Café / bistro", "s": "Brunch og frokost", "c": "ov", "w": "café cafe bistro brunch kaffe", "a": "#2C6E86", "i": "#1F2D36", "ai": "#FFFFFF", "ico": "<path d=\"M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z\"/><path d=\"M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16\"/><path d=\"M8 3.5c-.8 1 .8 2 0 3M12 3.5c-.8 1 .8 2 0 3\"/>"}, {"k": "grillbar", "l": "Grillbar / burger", "s": "Grill og takeaway", "c": "ov", "w": "grillbar grill burger kebab durum pizza sushi gatekøkken takeaway", "a": "#FFB400", "i": "#1C1410", "ai": "#1C1410", "ico": "<path d=\"M4 10a8 5 0 0 1 16 0z\"/><path d=\"M3.5 13.5h17\"/><path d=\"M4 17h16v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z\"/>"}, {"k": "catering", "l": "Catering", "s": "Mad ud af huset", "c": "ov", "w": "catering mad ud af huset buffet selskab", "a": "#2F6048", "i": "#1E2B24", "ai": "#FFFFFF", "ico": "<path d=\"M3 17h18M5 17a7 7 0 0 1 14 0\"/><path d=\"M12 8V6.5M10.5 6.5h3M4 20h16\"/>"}, {"k": "blomster", "l": "Blomsterbutik", "s": "Buketter og bryllup", "c": "ov", "w": "blomster blomsterbutik florist buket", "a": "#2F6B47", "i": "#1F3326", "ai": "#FFFFFF", "ico": "<circle cx=\"12\" cy=\"8\" r=\"2\"/><path d=\"M12 6a2.5 2.5 0 1 1 2 3.5M12 6a2.5 2.5 0 1 0-2 3.5M10 9.5a2.5 2.5 0 1 0 2 1M14 9.5a2.5 2.5 0 1 1-2 1\"/><path d=\"M12 11v10M12 17c-2-2.5-4.5-2.5-5.5-2 .5 2 3 3 5.5 2\"/>"}, {"k": "cykel", "l": "Cykelhandler", "s": "Salg og værksted", "c": "ov", "w": "cykel cykelhandler cykelværksted elcykel ladcykel", "a": "#D62F3A", "i": "#16222E", "ai": "#FFFFFF", "ico": "<circle cx=\"5.5\" cy=\"16\" r=\"3.5\"/><circle cx=\"18.5\" cy=\"16\" r=\"3.5\"/><path d=\"M5.5 16L9 9h7l2.5 7M9 9l3.5 7h-7M15 6.5h2.5\"/>"}, {"k": "bilpleje", "l": "Dæk og bilpleje", "s": "Dæk, polering og glas", "c": "ov", "w": "dæk dækcenter bilpleje polering autoglas autolakerer bilvask", "a": "#C6F000", "i": "#0A1020", "ai": "#0A1020", "ico": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M12 3.5V9M12 15v5.5M3.5 12H9M15 12h5.5\"/>"}, {"k": "bilforhandler", "l": "Bilforhandler", "s": "Brugte biler", "c": "ov", "w": "bilforhandler brugtvogn bilsalg autoophug biler", "a": "#0B7A75", "i": "#10283A", "ai": "#FFFFFF", "ico": "<path d=\"M3 16v-3l2-5h14l2 5v3z\"/><circle cx=\"7\" cy=\"16.5\" r=\"1.8\"/><circle cx=\"17\" cy=\"16.5\" r=\"1.8\"/><path d=\"M14 3.5h5v3h-5zM16.5 6.5V8\"/>"}, {"k": "vognmand", "l": "Vognmand / container", "s": "Kran og transport", "c": "ov", "w": "vognmand container kranbil transport grus", "a": "#C8372D", "i": "#1E252B", "ai": "#FFFFFF", "ico": "<rect x=\"2.5\" y=\"9\" width=\"11\" height=\"7\" rx=\"1\"/><path d=\"M13.5 11h4l3 3v2h-7z\"/><circle cx=\"6\" cy=\"17.5\" r=\"1.8\"/><circle cx=\"17\" cy=\"17.5\" r=\"1.8\"/><path d=\"M4 9l6-5 2 2\"/>"}, {"k": "taxa", "l": "Taxa / minibus", "s": "Kørsel døgnet rundt", "c": "ov", "w": "taxa taxi minibus kørsel", "a": "#FFD21F", "i": "#15202B", "ai": "#15202B", "ico": "<path d=\"M3 16v-3l2-5h14l2 5v3z\"/><circle cx=\"7\" cy=\"16.5\" r=\"1.8\"/><circle cx=\"17\" cy=\"16.5\" r=\"1.8\"/><path d=\"M9.5 8V5.5h5V8\"/>"}];
+  var TBY = {}; TRADES.forEach(function(t){ TBY[t.k] = t; });
+  var POPULAR = ['kloakmester','elektriker','vvs','tagdaekker','toemrer','maler','anlaegsgartner','frisoer','fysio','autovaerksted','restaurant'];
+  var OTHER = {k: 'andet', l: 'Andet fag', w: '', a: '#17262B', ico: '<path d="M12 5v14M5 12h14"/>'};
+  var firm = {name: '', cvr: '', addr: '', city: '', phone: '', mail: '', trade: ''};
+  var showAll = false, TPL = null, tplP = null, lastFocus = null;
+
+  function esc(t){ return String(t || '').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function norm(t){ return String(t || '').toLowerCase().replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa').replace(/[^a-z0-9 ]/g,''); }
+  function sendLead(data){
+    return fetch('/api/lead', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
+      .then(function(r){ return r.ok; }).catch(function(){ return false; });
+  }
+  function loadTpl(){
+    return tplP || (tplP = fetch('/tpl.json').then(function(r){ if (!r.ok) throw r.status; return r.json(); })
+      .then(function(d){ TPL = d; return d; }).catch(function(e){ tplP = null; throw e; }));
+  }
+  function guessTrade(t){
+    t = (t || '').toLowerCase();
+    if (/tandlæge|tandpleje/.test(t)) return 'tandlaege';
+    if (/dyrlæge/.test(t)) return 'dyrlaege';
+    if (/køreskole|kørelære/.test(t)) return 'koereskole';
+    if (/fitness|personlig træn/.test(t)) return 'traener';
+    if (/hundefrisør|dyrepension|kæledyr/.test(t)) return 'hundefrisoer';
+    if (/flytte/.test(t)) return 'flyttefirma';
+    if (/ejendomsservice|vicevært|ejendomsadministr/.test(t)) return 'ejendomsservice';
+    if (/skovbrug|træfæld|arborist/.test(t)) return 'traefaelder';
+    if (/nedrivning|jordarbejde|entreprenør|anlægsarbejde/.test(t)) return 'entreprenoer';
+    if (/smede|metalkonstruktion|klejnsmed/.test(t)) return 'smed';
+    if (/zoneterap/.test(t)) return 'massoer';
+    if (/psykolog|psykoterap|terapeut(?!.*fys)|coach/.test(t) && !/fysio|fod/.test(t)) return 'psykolog';
+    if (/diætist|kostvejled|ernæring/.test(t)) return 'diaetist';
+    if (/fodterap|fodpleje/.test(t)) return 'fodterapeut';
+    if (/optik|optiker/.test(t)) return 'optiker';
+    if (/barber/.test(t)) return 'barber';
+    if (/tatover|tatovør|piercing/.test(t)) return 'tatovoer';
+    if (/kosmetolog|hudpleje|solcent|skønhedsklinik/.test(t)) return 'kosmetolog';
+    if (/bager|konditor/.test(t)) return 'bager';
+    if (/slagter|fiskehand|kød/.test(t)) return 'slagter';
+    if (/catering|mad ud af huset/.test(t)) return 'catering';
+    if (/café|cafe|bistro/.test(t)) return 'cafe';
+    if (/gatekøkken|grill|burger|kebab|pizza/.test(t)) return 'grillbar';
+    if (/blomst|florist/.test(t)) return 'blomster';
+    if (/cykel/.test(t)) return 'cykel';
+    if (/dæk|autolak|autoglas|bilpleje|bilvask/.test(t)) return 'bilpleje';
+    if (/bilforhand|handel med (biler|motor)|brugtvogn|autoophug/.test(t)) return 'bilforhandler';
+    if (/vognmand|godstransport|container|kranbil/.test(t)) return 'vognmand';
+    if (/taxa|taxi|buskørsel|persontransport/.test(t)) return 'taxa';
+    if (/kloak/.test(t)) return 'kloakmester';
+    if (/frisør|frisor/.test(t)) return 'frisoer';
+    if (/fysioterap/.test(t)) return 'fysio';
+    if (/kiroprakt/.test(t)) return 'klinik';
+    if (/massage|massør|alternativ behandl/.test(t)) return 'massoer';
+    if (/motorkøretøj|autoreparat|autoværksted/.test(t)) return 'autovaerksted';
+    if (/restaurant|spisested/.test(t)) return 'restaurant';
+    if (/rengøring|vinduespuds/.test(t)) return 'rengoering';
+    if (/skønhedspleje|negle/.test(t)) return 'negle';
+    if (/låsesmed|låse/.test(t)) return 'laasesmed';
+    if (/murer/.test(t)) return 'murer';
+    if (/gulv/.test(t)) return 'gulvlaegger';
+    if (/el-?install|elektri/.test(t)) return 'elektriker';
+    if (/vvs|blikkensl|sanitet|vandinstall|varme/.test(t)) return 'vvs';
+    if (/tømrer|snedker|tomrer/.test(t)) return 'toemrer';
+    if (/maler/.test(t)) return 'maler';
+    if (/tag/.test(t)) return 'tagdaekker';
+    if (/anlægsgartn|landskab|have|gartner/.test(t)) return 'anlaegsgartner';
+    return '';
+  }
+
+  // ---------- hero "Ring mig op" ----------
+  var call = $('call');
+  if (call) call.addEventListener('submit', function(e){
+    e.preventDefault();
+    var n = $('call-name'), p = $('call-phone'), m = $('call-msg');
+    [n, p].forEach(function(x){ x.classList.toggle('need', !x.value.trim()); });
+    if (!n.value.trim()){ n.focus(); return; }
+    if (p.value.replace(/\D/g,'').length < 8){ p.classList.add('need'); p.focus(); return; }
+    var b = call.querySelector('button[type=submit]'); b.disabled = true;
+    sendLead({kind: 'Vil ringes op', contact: n.value.trim(), phone: p.value.trim()}).then(function(ok){
+      b.disabled = false; m.hidden = false;
+      m.className = 'msg ' + (ok ? 'good' : 'bad');
+      m.textContent = ok ? 'Tak, ' + n.value.trim().split(' ')[0] + '! Vi ringer til dig på ' + p.value.trim() + '. Du skal ikke gøre mere.' : 'Det gik ikke igennem. Ring i stedet på 29 91 04 92.';
+      if (ok){ n.value = ''; p.value = ''; }
+    });
+  });
+  document.querySelectorAll('[data-focus-call]').forEach(function(a){
+    a.addEventListener('click', function(){ setTimeout(function(){ $('call-name').focus({preventScroll: true}); }, 400); });
+  });
+  document.querySelectorAll('input').forEach(function(i){ i.addEventListener('input', function(){ i.classList.remove('need'); }); });
+
+  // ---------- steps ----------
+  function go(n){
+    [1,2,3].forEach(function(i){ $('st'+i).hidden = i !== n; $('d'+i).className = i <= n ? 'on' : ''; });
+    var top = $('se-din-side').getBoundingClientRect().top + window.scrollY;
+    if (Math.abs(window.scrollY - top) > 80) window.scrollTo({top: top, behavior: 'smooth'});
+    if (n === 2) loadTpl().catch(function(){});
+  }
+  document.querySelectorAll('[data-back]').forEach(function(b){ b.onclick = function(){ go(+b.getAttribute('data-back')); }; });
+
+  // step 1: firm name with CVR suggestions
+  var q = $('s-firm'), sug = $('s-sug'), hits = [], act = -1, timer = null, seq = 0;
+  function closeSug(){ sug.hidden = true; q.setAttribute('aria-expanded', 'false'); hits = []; act = -1; }
+  function paintSug(){
+    if (!hits.length){ closeSug(); return; }
+    sug.innerHTML = hits.map(function(f, i){
+      return '<li role="option" id="sg-'+i+'" aria-selected="'+(i === act)+'"><b>'+esc(f.name)+'</b><small>'+esc([f.addr, 'CVR '+f.cvr].filter(Boolean).join(' · '))+'</small></li>';
+    }).join('');
+    sug.hidden = false; q.setAttribute('aria-expanded', 'true');
+    q.setAttribute('aria-activedescendant', act > -1 ? 'sg-'+act : '');
+    Array.prototype.forEach.call(sug.children, function(li, i){
+      li.onmousedown = function(e){ e.preventDefault(); };
+      li.onclick = function(){ choose(i); };
+    });
+  }
+  function choose(i){
+    var f = hits[i]; closeSug();
+    firm = {name: f.name, cvr: f.cvr, addr: f.addr, city: f.city, phone: f.phone, mail: f.mail, trade: f.trade};
+    q.value = f.name;
+    $('s-found').hidden = false; $('s-found').textContent = '✓ Fundet: ' + f.name + (f.city ? ', ' + f.city : '');
+  }
+  q.addEventListener('input', function(){
+    firm = {name: '', cvr: '', addr: '', city: '', phone: '', mail: '', trade: ''};
+    $('s-found').hidden = true; $('s-err1').hidden = true;
+    var v = q.value.trim(), my = ++seq;
+    clearTimeout(timer);
+    if (v.length < 3){ closeSug(); return; }
+    timer = setTimeout(function(){
+      fetch('/api/cvr?q=' + encodeURIComponent(v)).then(function(r){ return r.ok ? r.json() : {results: []}; }).then(function(d){
+        if (my !== seq) return;
+        hits = (d.results || []).slice(0, 5).map(function(x){
+          return {name: x.name, cvr: x.cvr || '', addr: [x.address, [x.zip, x.city].filter(Boolean).join(' ')].filter(Boolean).join(', '),
+            city: x.city || '', phone: x.phone || '', mail: x.email || '', trade: guessTrade(x.industry)};
+        });
+        act = -1; paintSug();
+      }).catch(function(){});
+    }, 300);
+  });
+  q.addEventListener('keydown', function(e){
+    if (sug.hidden) return;
+    if (e.key === 'ArrowDown'){ e.preventDefault(); act = Math.min(act + 1, hits.length - 1); paintSug(); }
+    else if (e.key === 'ArrowUp'){ e.preventDefault(); act = Math.max(act - 1, 0); paintSug(); }
+    else if (e.key === 'Enter' && act > -1){ e.preventDefault(); choose(act); }
+    else if (e.key === 'Escape'){ closeSug(); }
+  });
+  q.addEventListener('blur', function(){ setTimeout(closeSug, 150); });
+  $('st1').addEventListener('submit', function(e){
+    e.preventDefault(); seq++; closeSug();
+    var v = q.value.trim();
+    if (!v){ $('s-err1').hidden = false; q.classList.add('need'); q.focus(); return; }
+    if (firm.name !== v) firm = {name: v, cvr: '', addr: '', city: '', phone: '', mail: '', trade: ''};
+    $('s-who').textContent = v;
+    var g = TBY[firm.trade];
+    $('s-guess').hidden = !g;
+    if (g) $('s-guess').textContent = 'Vi tror, du er ' + g.l.toLowerCase() + '. Tryk på et andet fag, hvis det ikke passer.';
+    $('s-q').value = ''; showAll = false; paintTiles();
+    go(2);
+  });
+
+  // step 2: trade tiles
+  function tile(t){
+    var on = firm.trade === t.k;
+    return '<button type="button" class="tile" role="radio" aria-checked="'+on+'" data-k="'+t.k+'" style="--a:'+t.a+'"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">'+t.ico+'</svg></span>'+esc(t.l)+'</button>';
+  }
+  function paintTiles(){
+    var s = norm($('s-q').value.trim()), list;
+    if (s){
+      list = TRADES.filter(function(t){ return (' ' + norm(t.l + ' ' + t.s + ' ' + t.w)).indexOf(' ' + s) > -1 || norm(t.l).indexOf(s) > -1; });
+    } else if (showAll){
+      list = TRADES.slice();
+    } else {
+      list = POPULAR.map(function(k){ return TBY[k]; }).filter(Boolean);
+      if (TBY[firm.trade] && list.indexOf(TBY[firm.trade]) < 0) list = [TBY[firm.trade]].concat(list.slice(0, -1));
+    }
+    $('s-grid').innerHTML = list.map(tile).join('') + tile(OTHER);
+    $('s-more').hidden = !!s || showAll;
+    $('s-none').hidden = !s || list.length > 0;
+    Array.prototype.forEach.call($('s-grid').children, function(b){
+      b.onclick = function(){
+        firm.trade = b.getAttribute('data-k'); $('s-err2').hidden = true;
+        Array.prototype.forEach.call($('s-grid').children, function(x){ x.setAttribute('aria-checked', x === b); });
+      };
+    });
+  }
+  $('s-q').addEventListener('input', paintTiles);
+  $('s-more').onclick = function(){ showAll = true; paintTiles(); };
+  $('s-next2').onclick = function(){
+    if (!firm.trade){ $('s-err2').hidden = false; return; }
+    $('l-city').hidden = !!firm.city;
+    if (!$('s-phone').value && firm.phone) $('s-phone').value = firm.phone;
+    go(3);
+  };
+
+  // step 3: contact, then preview
+  $('st3').addEventListener('submit', function(e){
+    e.preventDefault();
+    var n = $('s-name'), p = $('s-phone'), c = $('s-city'), err = $('s-err3'), bad = null;
+    if (!n.value.trim()) bad = [n, 'Skriv dit navn.'];
+    else if (p.value.replace(/\D/g,'').length < 8) bad = [p, 'Skriv dit telefonnummer med 8 cifre.'];
+    else if (!$('s-ok').checked) bad = [$('s-ok'), 'Sæt flueben, så vi må ringe til dig.'];
+    if (bad){ err.hidden = false; err.textContent = bad[1]; if (bad[0].type !== 'checkbox') bad[0].classList.add('need'); bad[0].focus(); return; }
+    err.hidden = true;
+    if (!firm.city) firm.city = c.value.trim();
+    var phone = p.value.trim();
+    sendLead({kind: 'Så sin side', firm: firm.name, cvr: firm.cvr, city: firm.city, firmPhone: firm.phone || phone,
+      trade: (TBY[firm.trade] || OTHER).l, contact: n.value.trim(), phone: phone});
+    if (firm.trade === 'andet'){
+      openPv(); $('pv-if').srcdoc = note('Tak, ' + esc(n.value.trim().split(' ')[0]) + '!', 'Vi laver et udkast til ' + esc(firm.name) + ' og ringer til dig på ' + esc(phone) + '.');
+      thanks(); return;
+    }
+    openPv();
+    loadTpl().then(function(){ render(phone); }).catch(function(){ $('pv-if').srcdoc = note('Siden kunne ikke hentes', 'Prøv igen om lidt, eller ring på 29 91 04 92.'); });
+  });
+
+  function note(h, p){
+    return '<!doctype html><html lang="da"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;font:20px/1.5 system-ui,sans-serif;color:#17262B;display:grid;place-items:center;min-height:100vh;text-align:center;padding:24px;box-sizing:border-box"><div><h1 style="margin:0 0 8px">'+h+'</h1><p style="margin:0;color:#4A585D">'+p+'</p></div></body></html>';
+  }
+  function render(phone){
+    var t = TPL[firm.trade]; if (!t) return;
+    var ph = phone || firm.phone, city = firm.city || 'dit område';
+    var tel = '+45' + ph.replace(/\D/g,'').replace(/^45(?=\d{8}$)/,'');
+    var slug = firm.name.toLowerCase().replace(/\s+(aps|a\/s|i\/s|ivs)$/,'').replace(/&/g,'og').replace(/[^a-zæøå0-9]/g,'').slice(0,24) || 'ditfirma';
+    var map = {NAME: esc(firm.name), SHORT: esc(firm.name.replace(/\s+(ApS|A\/S|I\/S|IVS)$/i,'')), PHONE: esc(ph), TEL: tel,
+      CITY: esc(city), ADDR: esc(firm.addr || city), MAIL: esc(firm.mail || 'kontakt@'+slug+'.dk'),
+      CVR: esc(firm.cvr || '–'), AUT: 'indsættes', AREAS: '<span>'+esc(city)+'</span><span>Omegnen</span>'};
+    var html = t.replace(/\{\{(\w+)\}\}/g, function(m, k){ return k in map ? map[k] : m; });
+    $('pv-if').srcdoc = '<!doctype html><html lang="da"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_blank"></head><body style="margin:0">' + html + '</body></html>';
+    $('pv-url').textContent = slug + '.dk';
+  }
+  function openPv(){
+    lastFocus = document.activeElement;
+    $('pv-ask').hidden = false; $('pv-ok').hidden = true;
+    $('pv-t').textContent = firm.trade === 'andet' ? 'Tak!' : 'Her er din nye side!';
+    $('pv').hidden = false; document.body.style.overflow = 'hidden';
+    $('pv-x').focus();
+  }
+  function thanks(){
+    $('pv-ask').hidden = true; $('pv-ok').hidden = false;
+    $('pv-ok').textContent = 'Tak! Anton ringer til dig på ' + $('s-phone').value.trim() + '. Du skal ikke gøre mere.';
+  }
+  function closePv(){ $('pv').hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+  $('pv-x').onclick = closePv;
+  $('pv-no').onclick = function(){ closePv(); go(2); };
+  $('pv-yes').onclick = function(){
+    var b = $('pv-yes'); b.disabled = true;
+    sendLead({kind: 'Vil ringes op', firm: firm.name, cvr: firm.cvr, city: firm.city, trade: (TBY[firm.trade] || OTHER).l,
+      contact: $('s-name').value.trim(), phone: $('s-phone').value.trim()}).then(function(ok){
+      b.disabled = false;
+      if (ok) thanks();
+      else { $('pv-ok').hidden = false; $('pv-ok').textContent = 'Det gik ikke igennem. Ring i stedet på 29 91 04 92.'; }
+    });
+  };
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !$('pv').hidden) closePv(); });
+  paintTiles();
+  // the call bar steps aside while the builder is on screen, so it never covers its buttons
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ document.querySelector('.callbar').classList.toggle('away', es[0].isIntersecting); }).observe($('se-din-side'));
+  }
+})();
+
+</script>
+</body>
+</html>
