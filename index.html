@@ -24,6 +24,10 @@ summary::after{content:"+";float:right;font-size:28px;line-height:1;color:#17734
 details[open] summary::after{transform:rotate(45deg)}
 :focus-visible{outline:3px solid #17734F;outline-offset:3px}
 @media (max-width:640px){header a[href="/#se-din-side"]{display:none!important}}
+.totop{position:fixed;right:20px;bottom:20px;z-index:30;width:60px;height:60px;border-radius:50%;background:#17734F;color:#FFFFFF;display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(23,38,43,.5);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .2s,transform .2s,visibility .2s}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:#0F5A3D;color:#FFFFFF}
+@media (max-width:700px){.totop{right:14px;width:54px;height:54px}body:has(.callbar) .totop{bottom:96px}}
 body>div{min-width:0}
 .msg{margin:0;font-size:18px;font-weight:800;border-radius:14px;padding:14px 16px}
 .msg.good{background:#E3F1E8;color:#0F5A3D}
@@ -40,7 +44,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
 /* se din side */
 .sds{background:#FFFFFF;border-top:1px solid #E4E2D9;border-bottom:1px solid #E4E2D9;scroll-margin-top:12px}
-.sds-in{max-width:880px;margin:0 auto;padding:72px 20px;display:flex;flex-direction:column;gap:28px}
+.sds-in{max-width:960px;margin:0 auto;padding:72px 20px;display:flex;flex-direction:column;gap:28px}
 .sds-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
 .pill{background:#E3F1E8;color:#0F5A3D;font-weight:800;font-size:17px;padding:8px 16px;border-radius:999px}
 .sds-head h2{margin:0;font-size:clamp(32px,4vw,46px);font-weight:900;letter-spacing:-.02em;line-height:1.1}
@@ -126,7 +130,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
   <!-- top -->
   <header style="background: #FFFFFF; border-bottom: 1px solid #E4E2D9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
       <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #17262B">
         <span style="width: 48px; height: 48px; border-radius: 14px; background: #17734F; display: grid; place-items: center">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9.5h13V10"></path><path d="M10 19.5v-5h4v5"></path></svg>
@@ -144,13 +148,13 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   </header>
 
   <!-- hero -->
-  <section id="top" style="max-width: 1160px; margin: 0 auto; padding: 64px 24px 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+  <section id="top" style="max-width: 1400px; margin: 0 auto; padding: 64px 24px 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
     <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
       <span style="align-self: flex-start; background: #E3F1E8; color: #0F5A3D; font-weight: 800; font-size: 17px; padding: 8px 16px; border-radius: 999px">Hjemmesider til små, lokale firmaer</span>
       <h1 style="margin: 0; font-size: clamp(40px, 5.4vw, 66px); line-height: 1.04; font-weight: 900; letter-spacing: -0.025em">Vi laver din hjemmeside.<br><span style="color: #17734F">Du skal ikke gøre noget.</span></h1>
       <p style="margin: 0; font-size: 22px; color: #4A585D; max-width: 30em">Skriv dit navn og nummer. Så ringer vi dig op, laver siden og viser den til dig, før du betaler en krone.</p>
 
-      <form id="call" novalidate style="background: #FFFFFF; border-radius: 28px; padding: 28px; box-shadow: 0 2px 0 #E4E2D9, 0 20px 50px -24px rgba(23, 38, 43, 0.25); display: flex; flex-direction: column; gap: 18px; max-width: 520px">
+      <form id="call" novalidate style="background: #FFFFFF; border-radius: 28px; padding: 28px; box-shadow: 0 2px 0 #E4E2D9, 0 20px 50px -24px rgba(23, 38, 43, 0.25); display: flex; flex-direction: column; gap: 18px; max-width: 600px">
         <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 800; font-size: 20px">Dit navn
           <input id="call-name" name="name" autocomplete="name" required placeholder="Fx Hanne" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
         </label>
@@ -171,7 +175,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
     <!-- illustration: a neighbour's house with a phone showing the site -->
     <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
-      <div style="position: relative; width: 100%; max-width: 440px; aspect-ratio: 1 / 1; border-radius: 40px; background: #E3F1E8; overflow: hidden">
+      <div style="position: relative; width: 100%; max-width: 560px; aspect-ratio: 1 / 1; border-radius: 40px; background: #E3F1E8; overflow: hidden">
         <svg viewBox="0 0 440 440" width="100%" height="100%" aria-hidden="true">
           <circle cx="352" cy="92" r="44" fill="#FFD45C"></circle>
           <path d="M0 330 Q110 290 220 320 T440 300 V440 H0Z" fill="#BFE0CB"></path>
@@ -203,7 +207,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
   <!-- 3 steps -->
   <section style="background: #FFFFFF; border-top: 1px solid #E4E2D9; border-bottom: 1px solid #E4E2D9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
       <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em; text-align: center">Sådan gør vi. Tre trin, det er det hele.</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
         <div style="background: #F7F6F1; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
@@ -226,10 +230,10 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   </section>
 
   <!-- reviews -->
-  <section style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+  <section style="max-width: 1400px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
     <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
-      <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Du er i trygge hænder</h2>
-      <p style="margin: 0; color: #4A585D; font-size: 21px">Du ser siden, før du betaler noget som helst.</p>
+      <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Jeg driver selv en lokal virksomhed</h2>
+      <p style="margin: 0; color: #4A585D; font-size: 21px">Ved siden af Nabosiden har jeg HaveGutterne. Den hjemmeside har jeg også selv lavet.</p>
     </div>
     <a href="/om-mig" class="proof">
       <span class="proof-img"><img src="/havegutterne.jpg" alt="Forsiden af havegutterne.dk" width="1400" height="774" loading="lazy"></span>
@@ -249,7 +253,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
   <!-- who -->
   <section style="background: #E3F1E8">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
         <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Hvem laver vi sider til?</h2>
         <p style="margin: 0; color: #2E4A3E; font-size: 21px; max-width: 34em">Små firmaer, der hellere vil passe deres arbejde end sidde ved en computer.</p>
@@ -372,7 +376,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
 
   <!-- price -->
-  <section style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 72px; display: flex; flex-direction: column; gap: 40px">
+  <section style="max-width: 1400px; margin: 0 auto; padding: 80px 24px 72px; display: flex; flex-direction: column; gap: 40px">
     <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
       <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Vælg den pakke, der passer</h2>
       <p style="margin: 0; color: #4A585D; font-size: 21px">Fast pris hver måned. Domæne, hosting og hjælp er med i dem alle.</p>
@@ -408,7 +412,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
   <!-- questions -->
   <section style="background: #FFFFFF; border-top: 1px solid #E4E2D9">
-    <div style="max-width: 820px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 16px">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 16px">
       <h2 style="margin: 0 0 16px; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em; text-align: center">Det spørger folk tit om</h2>
       <details open style="background: #F7F6F1; border-radius: 22px; padding: 22px 28px">
         <summary style="font-size: 22px; font-weight: 800; cursor: pointer">Skal jeg kunne noget med computere?</summary>
@@ -431,7 +435,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 
   <!-- bottom call -->
   <section style="background: #17734F; color: #FFFFFF">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 64px 24px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between">
       <div style="display: flex; flex-direction: column; gap: 8px">
         <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 42px); font-weight: 900">Hellere snakke med det samme?</h2>
         <p style="margin: 0; font-size: 21px; color: #D6EDE0">Ring direkte til Anton, der laver din side.</p>
@@ -444,7 +448,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   </section>
 
   <footer style="background: #FFFFFF; border-top: 1px solid #E4E2D9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 48px 24px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; font-size: 18px">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 48px 24px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; font-size: 18px">
       <div style="display: flex; flex-direction: column; gap: 10px">
         <span style="font-size: 24px; font-weight: 900">nabosiden<span style="color: #17734F">.dk</span></span>
         <span style="color: #4A585D">Hjemmesider til små, lokale firmaer. Vi gør det hele for dig.</span>
@@ -464,7 +468,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
         <a href="/cookies" style="color: #17262B; text-decoration: none; font-weight: 700">Cookies</a>
       </div>
     </div>
-    <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px 32px; border-top: 1px solid #E4E2D9; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 15px; color: #4A585D">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 18px 24px 32px; border-top: 1px solid #E4E2D9; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 15px; color: #4A585D">
       <span>© 2026 Nabosiden v/ Anton Dyreborg</span><span>Alle priser er ekskl. moms</span>
     </div>
   </footer>
@@ -475,6 +479,8 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   <a href="#se-din-side" class="cb-see">Se din side</a>
 </nav>
 
+<a href="#" class="totop" id="totop" aria-label="Til toppen af siden"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></a>
+<script>(function(){var b=document.getElementById('totop');function f(){b.classList.toggle('on',window.scrollY>300)}addEventListener('scroll',f,{passive:true});f();b.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})})})();</script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };

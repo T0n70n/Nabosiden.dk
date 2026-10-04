@@ -24,6 +24,10 @@ summary::after{content:"+";float:right;font-size:28px;line-height:1;color:#17734
 details[open] summary::after{transform:rotate(45deg)}
 :focus-visible{outline:3px solid #17734F;outline-offset:3px}
 @media (max-width:640px){header a[href="/#se-din-side"]{display:none!important}}
+.totop{position:fixed;right:20px;bottom:20px;z-index:30;width:60px;height:60px;border-radius:50%;background:#17734F;color:#FFFFFF;display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(23,38,43,.5);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .2s,transform .2s,visibility .2s}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:#0F5A3D;color:#FFFFFF}
+@media (max-width:700px){.totop{right:14px;width:54px;height:54px}body:has(.callbar) .totop{bottom:96px}}
 
 </style>
 </head>
@@ -31,7 +35,7 @@ details[open] summary::after{transform:rotate(45deg)}
 
 <div style="font-family: 'Nunito', system-ui, sans-serif; color: #17262B; background: #F7F6F1; font-size: 19px; line-height: 1.6; min-height: 100svh">
   <header style="background: #FFFFFF; border-bottom: 1px solid #E4E2D9">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
       <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #17262B">
         <span style="width: 48px; height: 48px; border-radius: 14px; background: #17734F; display: grid; place-items: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 10v9.5h13V10"></path><path d="M10 19.5v-5h4v5"></path></svg></span>
         <span style="font-size: 26px; font-weight: 900; letter-spacing: -0.02em">nabosiden<span style="color: #17734F">.dk</span></span>
@@ -74,20 +78,22 @@ details[open] summary::after{transform:rotate(45deg)}
       <p style="margin: 12px 0 0; color: #3A484D">Nej. Vi er startet med håndværkere, fordi vi kender branchen. Men vi laver hjemmesider til alle lokale virksomheder, fx frisører, klinikker, butikker og restauranter. Står dit fag ikke på listen, så <a href="/#se-din-side">skriv eller ring</a>, så laver vi et udkast til dig.</p>
     </details>
   </main>
-  <section style="max-width: 760px; margin: 0 auto; padding: 0 24px 72px">
+  <section style="max-width: 860px; margin: 0 auto; padding: 0 24px 72px">
     <div style="background: #17734F; color: #FFFFFF; border-radius: 28px; padding: 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between">
       <div><p style="margin: 0; font-size: 26px; font-weight: 900">Har du et spørgsmål?</p><p style="margin: 0; color: #D6EDE0">Ring til Anton. Du får et ærligt svar.</p></div>
       <a href="tel:29910492" style="display: inline-flex; align-items: center; gap: 10px; min-height: 64px; padding: 0 28px; border-radius: 999px; background: #FFD45C; color: #17262B; font-weight: 900; font-size: 22px; text-decoration: none">29 91 04 92</a>
     </div>
   </section>
   <footer style="border-top: 1px solid #E4E2D9; background: #FFFFFF">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 16px; color: #4A585D">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; font-size: 16px; color: #4A585D">
       <span>© 2026 Nabosiden v/ Anton Dyreborg</span>
       <span style="display: flex; flex-wrap: wrap; gap: 8px 20px"><a href="/om-mig">Hvem er jeg?</a><a href="/spoergsmaal">Spørgsmål og svar</a><a href="/handelsbetingelser">Handelsbetingelser</a><a href="/privatliv">Privatlivspolitik</a><a href="/cookies">Cookies</a></span>
     </div>
   </footer>
 </div>
 
+<a href="#" class="totop" id="totop" aria-label="Til toppen af siden"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></a>
+<script>(function(){var b=document.getElementById('totop');function f(){b.classList.toggle('on',window.scrollY>300)}addEventListener('scroll',f,{passive:true});f();b.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})})})();</script>
 
 </body>
 </html>
