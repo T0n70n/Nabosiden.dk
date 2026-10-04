@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nabosiden · Vi laver din hjemmeside. Du skal ikke gøre noget.</title>
-<meta name="description" content="Hjemmesider til små, lokale firmaer. Vi ringer, laver siden og viser den til dig, før du betaler. 0 kr i opstart, ingen binding, fra 499 kr om måneden.">
+<meta name="description" content="Hjemmesider til små, lokale firmaer. Vi kontakter dig, laver siden og viser den til dig, før du betaler. 0 kr i opstart, ingen binding, fra 499 kr om måneden.">
 <meta property="og:title" content="Nabosiden · Vi laver din hjemmeside. Du skal ikke gøre noget.">
-<meta property="og:description" content="Hjemmesider til små, lokale firmaer. Vi ringer, laver siden og viser den til dig, før du betaler. 0 kr i opstart, ingen binding, fra 499 kr om måneden.">
+<meta property="og:description" content="Hjemmesider til små, lokale firmaer. Vi kontakter dig, laver siden og viser den til dig, før du betaler. 0 kr i opstart, ingen binding, fra 499 kr om måneden.">
+<link rel="canonical" href="https://nabosiden.dk/">
+<meta property="og:url" content="https://nabosiden.dk/">
+<meta property="og:image" content="https://nabosiden.dk/logo/nabosiden-ikon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="da_DK">
 <meta name="theme-color" content="#17734F">
@@ -106,6 +109,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
 .pv-bar span{margin-left:8px;flex:1;background:#FFFFFF;border-radius:99px;padding:5px 14px;font-size:14px;color:#4A585D;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .pv-frame iframe{flex:1;width:100%;border:0;display:block}
 .pv-act{background:#FFFFFF;border-top:1px solid #E4E2D9;padding:14px 16px calc(14px + env(safe-area-inset-bottom))}
+[hidden]{display:none!important}
 .pv-ask{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px}
 .pv-ask .go{flex:1 1 260px;min-height:68px;font-size:22px}
 .pv-ok{max-width:760px;margin:0 auto;font-size:20px;font-weight:800;background:#E3F1E8;color:#0F5A3D;border-radius:16px;padding:16px 18px;text-align:center}
@@ -159,7 +163,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
           <input id="call-name" name="name" autocomplete="name" required placeholder="Fx Hanne" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
         </label>
         <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 800; font-size: 20px">Telefon eller mail
-          <input id="call-phone" name="phone" type="text" autocomplete="tel" required placeholder="Fx 12 34 56 78 eller navn@mail.dk" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
+          <input id="call-phone" name="phone" type="text" autocomplete="tel" required placeholder="Fx 12 34 56 78" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
         </label>
         <button type="submit" style="font: inherit; font-size: 24px; font-weight: 900; min-height: 72px; border: 0; border-radius: 18px; background: #17734F; color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 5px 0 #0F5A3D">
           Kontakt mig
@@ -341,11 +345,11 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
         <!-- step 3 -->
         <form id="st3" class="st" novalidate hidden>
           <h3>Næsten færdig!</h3>
-          <p class="sub">Hvem skal vi ringe til, hvis du vil have siden?</p>
+          <p class="sub">Hvem skal vi kontakte, hvis du vil have siden?</p>
           <label for="s-name">Dit navn<input id="s-name" autocomplete="name" placeholder="Fx Hanne"></label>
-          <label for="s-phone">Telefonnummer<small>Det står også på din nye side</small><input id="s-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Fx 12 34 56 78"></label>
+          <label for="s-phone">Telefon eller mail<small>Et telefonnummer kommer også på din nye side</small><input id="s-phone" type="text" autocomplete="tel" placeholder="Fx 12 34 56 78"></label>
           <label for="s-city" id="l-city">By<small>Hvor holder firmaet til?</small><input id="s-city" autocomplete="address-level2" placeholder="Fx Odense"></label>
-          <label class="ok" for="s-ok"><input type="checkbox" id="s-ok"><span>Ja tak, Nabosiden må ringe til mig om min nye side. <a href="/privatliv">Sådan passer vi på dine oplysninger</a>.</span></label>
+          <label class="ok" for="s-ok"><input type="checkbox" id="s-ok"><span>Ja tak, Nabosiden må kontakte mig om min nye side. <a href="/privatliv">Sådan passer vi på dine oplysninger</a>.</span></label>
           <p id="s-err3" class="err" hidden></p>
           <div class="row">
             <button class="go" type="submit">Vis min side <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
@@ -367,7 +371,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
     </div>
     <div class="pv-act">
       <div id="pv-ask" class="pv-ask">
-        <button type="button" id="pv-yes" class="go">Ja tak, ring mig op</button>
+        <button type="button" id="pv-yes" class="go">Ja tak, kontakt mig</button>
         <button type="button" id="pv-no" class="back">Prøv et andet fag</button>
       </div>
       <p id="pv-ok" class="pv-ok" hidden></p>
@@ -552,6 +556,9 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
     if (/anlægsgartn|landskab|have|gartner/.test(t)) return 'anlaegsgartner';
     return '';
   }
+  function isMail(v){ return /^\S+@\S+\.\S+$/.test(v); }
+  function fmt(v){ var d = v.replace(/\D/g,'').replace(/^45(?=\d{8}$)/,''); return d.length === 8 ? d.replace(/(\d\d)(?=\d)/g,'$1 ') : v; }
+  function who(lead, v){ if (isMail(v)) lead.mail = v; else lead.phone = fmt(v); return lead; }
 
   // ---------- hero "Ring mig op" ----------
   var call = $('call');
@@ -559,9 +566,11 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
     e.preventDefault();
     var n = $('call-name'), p = $('call-phone'), m = $('call-msg');
     [n, p].forEach(function(x){ x.classList.toggle('need', !x.value.trim()); });
-    if (!n.value.trim()){ n.focus(); return; }
+    m.hidden = true;
+    if (!n.value.trim()){ n.focus(); m.hidden = false; m.className = 'msg bad'; m.textContent = 'Skriv dit navn.'; return; }
     var pv = p.value.trim(), isMail = /^\S+@\S+\.\S+$/.test(pv);
-    if (!isMail && pv.replace(/\D/g,'').length < 8){ p.classList.add('need'); p.focus(); return; }
+    if (!isMail && pv.replace(/\D/g,'').length < 8){ p.classList.add('need'); p.focus(); m.hidden = false; m.className = 'msg bad'; m.textContent = 'Skriv et telefonnummer med 8 cifre eller en mail.'; return; }
+    if (!isMail) pv = fmt(pv);
     var b = call.querySelector('button[type=submit]'); b.disabled = true;
     var lead = {kind: 'Vil kontaktes', contact: n.value.trim()};
     if (isMail) lead.mail = pv; else lead.phone = pv;
@@ -684,16 +693,16 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
     e.preventDefault();
     var n = $('s-name'), p = $('s-phone'), c = $('s-city'), err = $('s-err3'), bad = null;
     if (!n.value.trim()) bad = [n, 'Skriv dit navn.'];
-    else if (p.value.replace(/\D/g,'').length < 8) bad = [p, 'Skriv dit telefonnummer med 8 cifre.'];
-    else if (!$('s-ok').checked) bad = [$('s-ok'), 'Sæt flueben, så vi må ringe til dig.'];
+    else if (!isMail(p.value.trim()) && p.value.replace(/\D/g,'').length < 8) bad = [p, 'Skriv et telefonnummer med 8 cifre eller en mail.'];
+    else if (!$('s-ok').checked) bad = [$('s-ok'), 'Sæt flueben, så vi må kontakte dig.'];
     if (bad){ err.hidden = false; err.textContent = bad[1]; if (bad[0].type !== 'checkbox') bad[0].classList.add('need'); bad[0].focus(); return; }
     err.hidden = true;
     if (!firm.city) firm.city = c.value.trim();
-    var phone = p.value.trim();
-    sendLead({kind: 'Så sin side', firm: firm.name, cvr: firm.cvr, city: firm.city, firmPhone: firm.phone || phone,
-      trade: (TBY[firm.trade] || OTHER).l, contact: n.value.trim(), phone: phone});
+    var v = p.value.trim(), phone = isMail(v) ? '' : fmt(v);
+    sendLead(who({kind: 'Så sin side', firm: firm.name, cvr: firm.cvr, city: firm.city, firmPhone: firm.phone || phone,
+      trade: (TBY[firm.trade] || OTHER).l, contact: n.value.trim()}, v));
     if (firm.trade === 'andet'){
-      openPv(); $('pv-if').srcdoc = note('Tak, ' + esc(n.value.trim().split(' ')[0]) + '!', 'Vi laver et udkast til ' + esc(firm.name) + ' og ringer til dig på ' + esc(phone) + '.');
+      openPv(); $('pv-if').srcdoc = note('Tak, ' + esc(n.value.trim().split(' ')[0]) + '!', 'Vi laver et udkast til ' + esc(firm.name) + ' og kontakter dig på ' + esc(phone || v) + '.');
       thanks(); return;
     }
     openPv();
@@ -705,11 +714,11 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   }
   function render(phone){
     var t = TPL[firm.trade]; if (!t) return;
-    var ph = phone || firm.phone, city = firm.city || 'dit område';
+    var ph = fmt(phone || firm.phone || '12 34 56 78'), city = firm.city || 'dit område';
     var tel = '+45' + ph.replace(/\D/g,'').replace(/^45(?=\d{8}$)/,'');
     var slug = firm.name.toLowerCase().replace(/\s+(aps|a\/s|i\/s|ivs)$/,'').replace(/&/g,'og').replace(/[^a-zæøå0-9]/g,'').slice(0,24) || 'ditfirma';
     var map = {NAME: esc(firm.name), SHORT: esc(firm.name.replace(/\s+(ApS|A\/S|I\/S|IVS)$/i,'')), PHONE: esc(ph), TEL: tel,
-      CITY: esc(city), ADDR: esc(firm.addr || city), MAIL: esc(firm.mail || 'kontakt@'+slug+'.dk'),
+      CITY: esc(city), ADDR: esc(firm.addr || city), MAIL: esc(firm.mail || (isMail($('s-phone').value.trim()) ? $('s-phone').value.trim() : 'kontakt@'+slug+'.dk')),
       CVR: esc(firm.cvr || '–'), AUT: 'indsættes', AREAS: '<span>'+esc(city)+'</span><span>Omegnen</span>'};
     var html = t.replace(/\{\{(\w+)\}\}/g, function(m, k){ return k in map ? map[k] : m; });
     $('pv-if').srcdoc = '<!doctype html><html lang="da"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_blank"></head><body style="margin:0">' + html + '</body></html>';
@@ -724,15 +733,15 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   }
   function thanks(){
     $('pv-ask').hidden = true; $('pv-ok').hidden = false;
-    $('pv-ok').textContent = 'Tak! Anton ringer til dig på ' + $('s-phone').value.trim() + '. Du skal ikke gøre mere.';
+    $('pv-ok').textContent = 'Tak! Anton kontakter dig på ' + who({}, $('s-phone').value.trim())[isMail($('s-phone').value.trim()) ? 'mail' : 'phone'] + '. Du skal ikke gøre mere.';
   }
   function closePv(){ $('pv').hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
   $('pv-x').onclick = closePv;
   $('pv-no').onclick = function(){ closePv(); go(2); };
   $('pv-yes').onclick = function(){
     var b = $('pv-yes'); b.disabled = true;
-    sendLead({kind: 'Vil ringes op', firm: firm.name, cvr: firm.cvr, city: firm.city, trade: (TBY[firm.trade] || OTHER).l,
-      contact: $('s-name').value.trim(), phone: $('s-phone').value.trim()}).then(function(ok){
+    sendLead(who({kind: 'Vil kontaktes', firm: firm.name, cvr: firm.cvr, city: firm.city, trade: (TBY[firm.trade] || OTHER).l,
+      contact: $('s-name').value.trim()}, $('s-phone').value.trim())).then(function(ok){
       b.disabled = false;
       if (ok) thanks();
       else { $('pv-ok').hidden = false; $('pv-ok').textContent = 'Det gik ikke igennem. Skriv til nabosiden@gmail.com eller ring på 29 91 04 92.'; }
