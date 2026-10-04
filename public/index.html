@@ -152,22 +152,22 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
     <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
       <span style="align-self: flex-start; background: #E3F1E8; color: #0F5A3D; font-weight: 800; font-size: 17px; padding: 8px 16px; border-radius: 999px">Hjemmesider til små, lokale firmaer</span>
       <h1 style="margin: 0; font-size: clamp(40px, 5.4vw, 66px); line-height: 1.04; font-weight: 900; letter-spacing: -0.025em">Vi laver din hjemmeside.<br><span style="color: #17734F">Du skal ikke gøre noget.</span></h1>
-      <p style="margin: 0; font-size: 22px; color: #4A585D; max-width: 30em">Skriv dit navn og nummer. Så ringer vi dig op, laver siden og viser den til dig, før du betaler en krone.</p>
+      <p style="margin: 0; font-size: 22px; color: #4A585D; max-width: 30em">Skriv dit navn og telefon eller mail. Så kontakter vi dig, laver siden og viser den til dig, før du betaler en krone.</p>
 
       <form id="call" novalidate style="background: #FFFFFF; border-radius: 28px; padding: 28px; box-shadow: 0 2px 0 #E4E2D9, 0 20px 50px -24px rgba(23, 38, 43, 0.25); display: flex; flex-direction: column; gap: 18px; max-width: 600px">
         <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 800; font-size: 20px">Dit navn
           <input id="call-name" name="name" autocomplete="name" required placeholder="Fx Hanne" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
         </label>
-        <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 800; font-size: 20px">Dit telefonnummer
-          <input id="call-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Fx 12 34 56 78" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
+        <label style="display: flex; flex-direction: column; gap: 8px; font-weight: 800; font-size: 20px">Telefon eller mail
+          <input id="call-phone" name="phone" type="text" autocomplete="tel" required placeholder="Fx 12 34 56 78 eller navn@mail.dk" style="font: inherit; font-weight: 600; font-size: 22px; min-height: 64px; padding: 0 20px; border: 2px solid #CFCCC0; border-radius: 16px; background: #FBFAF6; color: #17262B">
         </label>
         <button type="submit" style="font: inherit; font-size: 24px; font-weight: 900; min-height: 72px; border: 0; border-radius: 18px; background: #17734F; color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; box-shadow: 0 5px 0 #0F5A3D">
-          Ring mig op
+          Kontakt mig
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
         </button>
         <p style="margin: 0; font-size: 16px; color: #4A585D; display: flex; gap: 8px; align-items: center">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17734F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6z"></path></svg>
-          Gratis og uforpligtende. Vi ringer kun om din hjemmeside.
+          Gratis og uforpligtende. Vi kontakter dig kun om din hjemmeside.
         </p>
         <p id="call-msg" class="msg" role="status" hidden></p>
       </form>
@@ -212,7 +212,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
         <div style="background: #F7F6F1; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
           <span style="width: 64px; height: 64px; border-radius: 50%; background: #17734F; color: #FFFFFF; font-size: 32px; font-weight: 900; display: grid; place-items: center">1</span>
-          <h3 style="margin: 0; font-size: 26px; font-weight: 900">Vi ringer til dig</h3>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 900">Vi kontakter dig</h3>
           <p style="margin: 0; color: #4A585D">En kort snak. Du fortæller, hvad du laver. Vi skriver det ned.</p>
         </div>
         <div style="background: #F7F6F1; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
@@ -416,7 +416,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
       <h2 style="margin: 0 0 16px; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em; text-align: center">Det spørger folk tit om</h2>
       <details open style="background: #F7F6F1; border-radius: 22px; padding: 22px 28px">
         <summary style="font-size: 22px; font-weight: 800; cursor: pointer">Skal jeg kunne noget med computere?</summary>
-        <p style="margin: 12px 0 0; color: #4A585D">Nej. Du skal bare tage telefonen, når vi ringer. Resten klarer vi.</p>
+        <p style="margin: 12px 0 0; color: #4A585D">Nej. Du skal bare svare, når vi kontakter dig. Resten klarer vi.</p>
       </details>
       <details style="background: #F7F6F1; border-radius: 22px; padding: 22px 28px">
         <summary style="font-size: 22px; font-weight: 800; cursor: pointer">Hvad hvis jeg ikke kan lide siden?</summary>
@@ -560,12 +560,15 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
     var n = $('call-name'), p = $('call-phone'), m = $('call-msg');
     [n, p].forEach(function(x){ x.classList.toggle('need', !x.value.trim()); });
     if (!n.value.trim()){ n.focus(); return; }
-    if (p.value.replace(/\D/g,'').length < 8){ p.classList.add('need'); p.focus(); return; }
+    var pv = p.value.trim(), isMail = /^\S+@\S+\.\S+$/.test(pv);
+    if (!isMail && pv.replace(/\D/g,'').length < 8){ p.classList.add('need'); p.focus(); return; }
     var b = call.querySelector('button[type=submit]'); b.disabled = true;
-    sendLead({kind: 'Vil ringes op', contact: n.value.trim(), phone: p.value.trim()}).then(function(ok){
+    var lead = {kind: 'Vil kontaktes', contact: n.value.trim()};
+    if (isMail) lead.mail = pv; else lead.phone = pv;
+    sendLead(lead).then(function(ok){
       b.disabled = false; m.hidden = false;
       m.className = 'msg ' + (ok ? 'good' : 'bad');
-      m.textContent = ok ? 'Tak, ' + n.value.trim().split(' ')[0] + '! Vi ringer til dig på ' + p.value.trim() + '. Du skal ikke gøre mere.' : 'Det gik ikke igennem. Ring i stedet på 29 91 04 92.';
+      m.textContent = ok ? 'Tak, ' + n.value.trim().split(' ')[0] + '! Vi kontakter dig på ' + pv + '. Du skal ikke gøre mere.' : 'Det gik ikke igennem. Skriv til nabosiden@gmail.com eller ring på 29 91 04 92.';
       if (ok){ n.value = ''; p.value = ''; }
     });
   });
@@ -732,7 +735,7 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
       contact: $('s-name').value.trim(), phone: $('s-phone').value.trim()}).then(function(ok){
       b.disabled = false;
       if (ok) thanks();
-      else { $('pv-ok').hidden = false; $('pv-ok').textContent = 'Det gik ikke igennem. Ring i stedet på 29 91 04 92.'; }
+      else { $('pv-ok').hidden = false; $('pv-ok').textContent = 'Det gik ikke igennem. Skriv til nabosiden@gmail.com eller ring på 29 91 04 92.'; }
     });
   };
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !$('pv').hidden) closePv(); });

@@ -10,7 +10,7 @@ export async function onRequestPost({ request, env }) {
 
   const lead = {};
   for (const k of FIELDS) if (data[k]) lead[k] = String(data[k]).slice(0, 2000);
-  if (!lead.contact || !lead.phone) return json({ ok: false, error: 'missing_fields' }, 400);
+  if (!lead.contact || !(lead.phone || lead.mail)) return json({ ok: false, error: 'missing_fields' }, 400);
   lead.at = new Date().toISOString();
 
   if (env.LEADS) await env.LEADS.put(lead.at + '-' + crypto.randomUUID(), JSON.stringify(lead));
@@ -26,7 +26,9 @@ export async function onRequestPost({ request, env }) {
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify(body),
   });
-  return json({ ok: res.ok }, res.ok ? 200 : 502);
+  if (res.ok) return json({ ok: true });
+  const detail = (await res.text().catch(() => '')).slice(0, 200);
+  return json({ ok: false, error: 'web3forms', status: res.status, detail }, 502);
 }
 
 function json(body, status = 200) {
