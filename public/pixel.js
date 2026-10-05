@@ -17,12 +17,11 @@
     if (document.getElementById('ns-ck')) return;
     var d = document.createElement('div');
     d.id = 'ns-ck'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Cookies');
-    d.innerHTML = '<p style="margin:0 0 6px;font-size:19px;font-weight:900;color:#17262B">Må vi måle vores annoncer?</p>'
-      + '<p style="margin:0 0 16px;font-size:16px;line-height:1.5;color:#3A484D">Siger du ja, sætter vi en cookie fra Meta (Facebook), så vi kan se, om vores annoncer virker. Du kan altid ændre dit valg under <a href="/cookies" style="color:#17734F">Cookies</a>.</p>'
-      + '<div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" data-v="yes">Ja tak</button><button type="button" data-v="no">Nej tak</button></div>';
-    d.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:520px;margin:0 auto;background:#FFFFFF;border-radius:22px;padding:22px;box-shadow:0 16px 48px -12px rgba(23,38,43,.45);font-family:Nunito,system-ui,sans-serif';
+    d.innerHTML = '<span style="flex:1 1 auto">Vi bruger cookies. <a href="/cookies" style="color:#17734F">Læs mere</a></span>'
+      + '<button type="button" data-v="yes">Accepter</button><button type="button" data-v="no">Afvis</button>';
+    d.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:440px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#FFFFFF;border-radius:14px;padding:10px 12px;box-shadow:0 8px 28px -10px rgba(23,38,43,.4);font:600 14px Nunito,system-ui,sans-serif;color:#3A484D';
     [].forEach.call(d.querySelectorAll('button'), function(b){
-      b.style.cssText = 'flex:1 1 140px;min-height:52px;border-radius:14px;font:800 17px Nunito,system-ui,sans-serif;cursor:pointer;border:2px solid #17734F;' + (b.dataset.v === 'yes' ? 'background:#17734F;color:#FFFFFF' : 'background:#FFFFFF;color:#17734F');
+      b.style.cssText = 'min-height:36px;padding:0 14px;border-radius:10px;font:800 14px Nunito,system-ui,sans-serif;cursor:pointer;border:2px solid #17734F;' + (b.dataset.v === 'yes' ? 'background:#17734F;color:#FFFFFF' : 'background:#FFFFFF;color:#17734F');
       b.addEventListener('click', function(){ set(b.dataset.v); d.remove(); if (b.dataset.v === 'yes') load(); });
     });
     document.body.appendChild(d);
