@@ -1,6 +1,6 @@
 // Meta-pixel, kun efter samtykke. Sæt PIXEL_ID for at slå den til.
 (function(){
-  var PIXEL_ID = '';
+  var PIXEL_ID = '1089683803957398';
   var KEY = 'ns-cookies';
   if (!PIXEL_ID) return;
   function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
