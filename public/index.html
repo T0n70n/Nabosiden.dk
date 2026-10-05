@@ -36,6 +36,15 @@ body>div{min-width:0}
 .msg.good{background:#E3F1E8;color:#0F5A3D}
 .msg.bad{background:#FBE3E0;color:#8E2A1F}
 input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
+.rv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px}
+.rv-card{background:#FFFFFF;border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 2px 0 #E4E2D9}
+.rv-stars{display:flex;gap:4px}
+.rv-card q{font-size:21px;line-height:1.45;color:#17262B;quotes:"\201D" "\201D"}
+.rv-who{display:flex;flex-direction:column;font-size:17px;color:#4A585D}
+.rv-who b{color:#17262B;font-size:19px}
+.rv-first{justify-self:center;width:100%;max-width:760px;background:#FFF4D1;box-shadow:0 2px 0 #F0DFA6;align-items:flex-start}
+.rv-first b{font-size:28px;font-weight:900;line-height:1.15}
+.rv-first p{margin:0;font-size:19px;color:#4A585D}
 .proof{display:flex;flex-wrap:wrap;align-items:center;gap:28px;background:#FFFFFF;border-radius:28px;padding:20px;text-decoration:none;color:#17262B;box-shadow:0 2px 0 #E4E2D9;transition:transform .15s}
 .proof:hover{transform:translateY(-3px);color:#17262B}
 .proof-img{flex:1 1 380px;min-width:0;border-radius:18px;overflow:hidden;border:1px solid #E4E2D9}
@@ -234,6 +243,32 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   </section>
 
   <!-- reviews -->
+  <section style="border-bottom: 1px solid #E4E2D9">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
+        <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Hvad siger kunderne?</h2>
+        <p style="margin: 0; color: #4A585D; font-size: 21px; max-width: 34em">Nabosiden er ny. Vi viser kun ægte anmeldelser fra rigtige kunder, med navn og by.</p>
+      </div>
+      <div class="rv">
+        <!-- Ægte anmeldelse: kopiér blokken, udfyld og fjern kommentaren. Kun med kundens tilladelse.
+        <div class="rv-card">
+          <span class="rv-stars">STJERNER</span>
+          <q>Kundens egne ord.</q>
+          <span class="rv-who"><b>Navn, firma</b>By</span>
+        </div>
+        -->
+        <div class="rv-card rv-first">
+          <span class="rv-stars"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B12F" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B12F" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B12F" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B12F" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"></path></svg><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E0B12F" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z"></path></svg></span>
+          <b>Bliv en af vores første kunder</b>
+          <p>Vi er lige startet. Når din side er online, spørger vi, hvad du synes. Dine ord kommer til at stå her.</p>
+          <a href="/#se-din-side" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0 28px; border-radius: 999px; background: #17734F; color: #FFFFFF; font-weight: 900; font-size: 20px; text-decoration: none; box-shadow: 0 4px 0 #0F5A3D">Se din nye side
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- proof -->
   <section style="max-width: 1400px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
     <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
       <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); font-weight: 900; letter-spacing: -0.02em">Jeg driver selv en lokal virksomhed</h2>
