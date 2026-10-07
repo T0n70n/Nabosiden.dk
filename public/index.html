@@ -526,8 +526,11 @@ input.need{border-color:#C8372D!important;box-shadow:0 0 0 4px #FBE3E0}
   function esc(t){ return String(t || '').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function norm(t){ return String(t || '').toLowerCase().replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa').replace(/[^a-z0-9 ]/g,''); }
   function sendLead(data){
+    // fbclid comes from the ad link; the server tells Meta about the lead with only that click id (no contact details)
+    try { data.fbclid = new URLSearchParams(location.search).get('fbclid') || ''; } catch(e){}
+    data.eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
     return fetch('/api/lead', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
-      .then(function(r){ if (r.ok && window.nsLead) window.nsLead(data.kind); return r.ok; }).catch(function(){ return false; });
+      .then(function(r){ if (r.ok && window.nsLead) window.nsLead(data.kind, data.eventId); return r.ok; }).catch(function(){ return false; });
   }
   function loadTpl(){
     return tplP || (tplP = fetch('/tpl.json').then(function(r){ if (!r.ok) throw r.status; return r.json(); })
